@@ -77,28 +77,6 @@
     </header>
 
     <main id="top">
-      <!-- SVG filters for brush-texture effect on Sisyphus -->
-      <svg width="0" height="0" style="position:absolute">
-        <defs>
-          <!-- brush bleed for figure -->
-          <filter id="brush-figure" x="-20%" y="-20%" width="140%" height="140%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.015 0.04" numOctaves="3" seed="7" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-          <!-- brush bleed for boulder — different seed for organic variety -->
-          <filter id="brush-boulder" x="-20%" y="-20%" width="140%" height="140%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.035" numOctaves="3" seed="13" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-          <!-- subtle grain overlay -->
-          <filter id="grain-overlay">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="grain"/>
-            <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
-            <feComposite in2="SourceGraphic" operator="over"/>
-          </filter>
-        </defs>
-      </svg>
-
       <section class="hero">
         <!-- DNA Helix — 3D hero visual -->
         <div class="hero__helix" id="heroHelixContainer" aria-hidden="true">
@@ -233,24 +211,9 @@
         </div>
         <div class="education">
           <h3 class="mono mono--sm education__heading">Education</h3>
-          <!-- Sisyphus — brush-stroke illustration (CC Attribution, vectordoodle) -->
+          <!-- Sisyphus illustration -->
           <div class="sisyphus-wrap">
-            <svg class="sisyphus-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- slope / ground -->
-              <path class="sisyphus-slope" d="M354.165 160.635C252.238 223.748 152.551 294.348 46.8345 345.159" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- figure head -->
-              <g class="sisyphus-figure">
-                <path d="M107.144 151.822C125.387 123.149 172.933 150.894 145.402 178.522C121.728 202.27 97.2165 175.079 108.809 151.822" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-                <!-- torso + back leg -->
-                <path d="M122.974 212.302C125.153 228.19 81.2981 324.169 91.3644 307.561" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-                <!-- front leg -->
-                <path d="M115.677 251.155C161.521 223.509 132.314 288.796 148.868 280.447" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-                <!-- arms pushing -->
-                <path d="M123.053 212.302C144.827 207.048 162.33 196.81 180.831 186.468" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              </g>
-              <!-- boulder -->
-              <path class="sisyphus-boulder" d="M183.183 91.4691C298.323 -27.1136 376.95 176.85 262.758 215.315C197.875 237.172 150.585 139.072 187.809 98.9482" stroke="currentColor" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <img class="sisyphus-img" src="./assets/sisyphus.gif" alt="Sisyphus pushing boulder uphill" />
           </div>
           <div class="education__items">
             <div class="education__item">

@@ -768,7 +768,7 @@ ul { margin: 0; padding: 0; }
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
   gap: var(--sp-8);
   align-items: start;
 }
@@ -878,66 +878,22 @@ ul { margin: 0; padding: 0; }
   opacity: 0.5;
 }
 
-/* ── Sisyphus animation ──────────────────────────────────── */
+/* ── Sisyphus illustration ────────────────────────────────── */
 .sisyphus-wrap {
   position: absolute;
-  right: -1rem;
+  right: 0;
   top: -0.5rem;
-  width: 160px;
-  height: 160px;
+  width: 180px;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.45;
 }
-.sisyphus-svg {
+.sisyphus-img {
   width: 100%;
-  height: 100%;
-  color: var(--fg);
-  overflow: visible;
-  filter: url(#grain-overlay);
+  height: auto;
+  display: block;
 }
-/* darken strokes — original was too pale */
-.sisyphus-svg path {
-  stroke: var(--fg);
-  stroke-opacity: 0.85;
-  stroke-width: 18;
-}
-.sisyphus-slope {
-  stroke-opacity: 0.5 !important;
-  stroke-width: 14 !important;
-}
-
-/* brush-texture filters applied per group for organic variety */
-.sisyphus-figure {
-  filter: url(#brush-figure);
-  transform-origin: 120px 260px;
-  animation: sisyphus-strain 4s ease-in-out infinite;
-}
-.sisyphus-boulder {
-  filter: url(#brush-boulder);
-  transform-origin: 220px 150px;
-  animation: boulder-wobble 4s ease-in-out infinite;
-}
-
-/* figure: lean into push, recoil, repeat */
-@keyframes sisyphus-strain {
-  0%   { transform: rotate(0deg) translate(0, 0); }
-  20%  { transform: rotate(-1.5deg) translate(-2px, -1px); }
-  45%  { transform: rotate(-3.5deg) translate(-6px, -5px); }
-  55%  { transform: rotate(-3deg) translate(-5px, -4px); }
-  70%  { transform: rotate(0.5deg) translate(1px, 2px); }
-  85%  { transform: rotate(1.5deg) translate(3px, 4px); }
-  100% { transform: rotate(0deg) translate(0, 0); }
-}
-/* boulder: resist, yield, slip back — offset timing from figure */
-@keyframes boulder-wobble {
-  0%   { transform: rotate(0deg) translate(0, 0); }
-  15%  { transform: rotate(0.5deg) translate(1px, 0); }
-  40%  { transform: rotate(-3deg) translate(-4px, -4px); }
-  50%  { transform: rotate(-4.5deg) translate(-7px, -6px); }
-  65%  { transform: rotate(-1.5deg) translate(-2px, -1px); }
-  80%  { transform: rotate(2.5deg) translate(5px, 6px); }
-  92%  { transform: rotate(1deg) translate(2px, 3px); }
-  100% { transform: rotate(0deg) translate(0, 0); }
+[data-theme="dark"] .sisyphus-img {
+  filter: invert(1);
 }
 
 @media (max-width: 768px) {
@@ -946,8 +902,7 @@ ul { margin: 0; padding: 0; }
     right: auto;
     top: auto;
     margin: var(--sp-2) auto var(--sp-3);
-    width: 140px;
-    height: 140px;
+    width: 150px;
   }
 }
 .education__items {
@@ -2528,7 +2483,7 @@ ul { margin: 0; padding: 0; }
    ═══════════════════════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
-  .about-layout { grid-template-columns: 1fr 1.5fr; }
+  .about-layout { grid-template-columns: 1fr; }
   .journal-grid { grid-template-columns: 1fr; }
   .contact-body { grid-template-columns: 1fr 1.5fr; gap: var(--sp-4); }
   .contact-links-grid { grid-template-columns: repeat(2, 1fr); }
