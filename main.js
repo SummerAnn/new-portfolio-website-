@@ -16,6 +16,7 @@ if (themeToggle) {
   });
 }
 
+
 /* ── Contextual Cursor (desktop only) ──────────────────── */
 
 const cursorLabel = document.querySelector("#cursorLabel");

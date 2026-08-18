@@ -208,6 +208,7 @@ ul { margin: 0; padding: 0; }
   opacity: 1;
 }
 
+
 /* Theme toggle — lightbulb */
 .theme-toggle {
   display: inline-flex;
@@ -833,6 +834,141 @@ ul { margin: 0; padding: 0; }
   line-height: 1.7;
 }
 
+/* ── Education ─────────────────────────────────────────────── */
+
+.education {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--rule);
+}
+.education__heading {
+  margin-bottom: var(--sp-3);
+  opacity: 0.5;
+}
+.education__items {
+  display: flex;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+}
+.education__item {
+  flex: 1;
+  min-width: 220px;
+}
+.education__school {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-body);
+  color: var(--fg);
+}
+.education__detail {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  color: var(--fg-muted);
+  margin-top: 4px;
+}
+.education__year {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  opacity: 0.4;
+  margin-top: 2px;
+}
+
+/* ── Comments ──────────────────────────────────────────────── */
+
+.comments-section {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--rule);
+}
+.comments__heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  margin-bottom: var(--sp-3);
+}
+.comments__list {
+  margin-bottom: var(--sp-4);
+}
+.comments__empty {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  opacity: 0.35;
+}
+.comments__item {
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.comments__item:first-child {
+  border-top: 1px solid var(--rule);
+}
+.comments__meta {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+.comments__author {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--fg);
+}
+.comments__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  opacity: 0.35;
+}
+.comments__body {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--fg);
+  opacity: 0.8;
+}
+.comments__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.comments__input,
+.comments__textarea {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  padding: 8px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--fg);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.comments__input:focus,
+.comments__textarea:focus {
+  border-color: var(--fg-muted);
+}
+.comments__textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.comments__submit {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--fg);
+  color: var(--bg);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.comments__submit:hover {
+  opacity: 0.8;
+}
+
 /* ── Word Spotlight (Practice section — desktop only) ─────── */
 
 @media (hover: hover) and (pointer: fine) {
@@ -1120,6 +1256,10 @@ ul { margin: 0; padding: 0; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: var(--sp-4) var(--gutter);
+  display: none;
+}
+.diorama-section.open {
+  display: block;
 }
 
 .diorama-container {
@@ -1170,6 +1310,13 @@ ul { margin: 0; padding: 0; }
   display: flex;
   flex-direction: column;
   gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.diorama-zoom.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ── Location nav panel ── */
@@ -1178,6 +1325,13 @@ ul { margin: 0; padding: 0; }
   top: var(--sp-2);
   left: var(--sp-2);
   z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.diorama-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 .diorama-nav__toggle {
   width: 32px; height: 32px; border-radius: 50%;
@@ -1231,6 +1385,13 @@ ul { margin: 0; padding: 0; }
   display: flex;
   flex-direction: column;
   gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.diorama-controls.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .diorama-btn {

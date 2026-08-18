@@ -60,6 +60,15 @@ const renderArticle = (note) => {
         )
         .join("")}
     </div>
+    <div class="comments-section" id="commentsSection">
+      <h3 class="comments__heading">Comments</h3>
+      <div class="comments__list" id="commentsList"></div>
+      <form class="comments__form" id="commentForm">
+        <input type="email" class="comments__input" id="commentEmail" placeholder="Email (required)" required />
+        <textarea class="comments__textarea" id="commentText" placeholder="Leave a comment..." rows="3" required></textarea>
+        <button type="submit" class="comments__submit">Post comment</button>
+      </form>
+    </div>
   `;
 
   if (articleToc) {
@@ -105,6 +114,50 @@ const renderArticle = (note) => {
       });
     });
   });
+
+  // Comments
+  const commentsKey = `comments_${note.slug}`;
+  const commentsList = document.getElementById("commentsList");
+  const commentForm = document.getElementById("commentForm");
+
+  function getComments() {
+    try { return JSON.parse(localStorage.getItem(commentsKey)) || []; }
+    catch { return []; }
+  }
+
+  function renderComments() {
+    const comments = getComments();
+    if (!commentsList) return;
+    if (comments.length === 0) {
+      commentsList.innerHTML = `<p class="comments__empty">No comments yet. Be the first.</p>`;
+      return;
+    }
+    commentsList.innerHTML = comments.map(c => {
+      const name = c.email.split("@")[0];
+      const date = new Date(c.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+      const escaped = c.text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return `<div class="comments__item">
+        <div class="comments__meta"><span class="comments__author">${name}</span><span class="comments__date">${date}</span></div>
+        <p class="comments__body">${escaped}</p>
+      </div>`;
+    }).join("");
+  }
+
+  renderComments();
+
+  if (commentForm) {
+    commentForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("commentEmail").value.trim();
+      const text = document.getElementById("commentText").value.trim();
+      if (!email || !text) return;
+      const comments = getComments();
+      comments.push({ email, text, date: new Date().toISOString() });
+      localStorage.setItem(commentsKey, JSON.stringify(comments));
+      commentForm.reset();
+      renderComments();
+    });
+  }
 };
 
 const slug = window.location.hash.replace("#", "");
