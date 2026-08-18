@@ -103,3 +103,25 @@ const setupGsap = () => {
 };
 
 window.addEventListener("load", setupGsap);
+
+/* ── Subscribe Form ──────────────────────────────────── */
+
+const subForm = document.querySelector("#subscribeForm");
+if (subForm) {
+  subForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = subForm.querySelector('input[name="email"]').value;
+    if (!email) return;
+    const subs = JSON.parse(localStorage.getItem("subscribers") || "[]");
+    if (!subs.includes(email)) {
+      subs.push(email);
+      localStorage.setItem("subscribers", JSON.stringify(subs));
+    }
+    const parent = subForm.parentElement;
+    subForm.remove();
+    const msg = document.createElement("p");
+    msg.className = "subscribe-success";
+    msg.textContent = "You're in. I'll email you when something new goes up.";
+    parent.insertBefore(msg, parent.querySelector(".subscribe-rss"));
+  });
+}

@@ -1,7 +1,34 @@
 export const research = [
   {
+    title: "How Memory Locks In False Beliefs: A Testbed for Multi-Agent Safety",
+    year: "2026\u2013Present",
+    venue: "Schmidt Sciences \u00b7 Safe and Trustworthy Multi-Agent Systems",
+    role: "Researcher",
+    blurb:
+      "Ongoing. Studying how false beliefs spread and lock in when AI agents share memory, with no adversary involved.",
+    stack: ["Multi-agent safety", "Agent memory", "Belief propagation"],
+    link: "https://agent4science.org",
+    details: [],
+  },
+  {
+    title: "Discussion Quality in Multi-Agent Scientific Discourse",
+    year: "2026\u2013Present",
+    venue: "Ongoing Research",
+    role: "Researcher",
+    blurb:
+      "Which replies actually change what an agent does next? I ran observational and experimental studies on 39K+ comments to figure out what makes feedback stick versus fade. The strongest result so far: the reply after the opening matters more than the opening itself.",
+    stack: ["Discourse analysis", "Causal inference", "Experimental design"],
+    link: "https://agent4science.org",
+    details: [
+      "Observational finding: mechanism clarify (asking how/why) produces lasting shifts at 76% vs 45% for method clarify (asking about design)",
+      "Experimental finding: after a clarify opening, demand and reframe replies sustain change at 92% and 81% vs 20% for affirm",
+      "Running thread-level experiments on whether early composition (first 4 replies) determines premature consensus, with 60 take posts assigned to balanced vs dissent-heavy openings",
+      "283 agents, 39K+ comments, across 25 model families including Claude Sonnet 4 (49.5%), DeepSeek, Llama 4, and Gemini",
+    ],
+  },
+  {
     title: "The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams",
-    year: "2025–2026",
+    year: "2025\u20132026",
     venue: "ICML 2026 Workshop",
     role: "First Author",
     blurb:
@@ -10,24 +37,24 @@ export const research = [
     link: "https://openreview.net/profile?id=~Summer_Eunhyung_Ann1",
     details: [
       "Tested 10 configurations across 11 verifier-scored optimization tasks using Claude Sonnet 4, GPT-4o, and Gemini 2.5 Flash under matched budgets",
-      "Showed that full-solution interaction causes proposals to converge within a single round — Chain, MAgICoRe, and Debate all produce negative diverse-model MIG",
-      "MoA (independent proposers, then synthesis) is the only configuration whose diverse MIG stays positive, because proposers never see each other's outputs",
-      "Critique helps only when the fault is easy to locate: Knapsack (clear constraint violation) vs 3AP-Free (hard to find arithmetic-progression triple)",
+      "Showed that full-solution interaction causes proposals to converge within a single round. Chain, MAgICoRe, and Debate all produce negative diverse-model MIG",
+      "MoA (independent proposers, then synthesis) is the only configuration whose diverse MIG stays positive because proposers never see each other's outputs",
+      "Critique helps only when the fault is easy to locate. Knapsack has clear constraint violations; 3AP-Free (hard to find arithmetic-progression triple)",
     ],
   },
   {
     title: "Agent4Science + Flamebird",
-    year: "2026–Present",
+    year: "2026\u2013Present",
     venue: "Scientific AI Infrastructure",
     role: "Creator",
     blurb:
-      "Multi-agent platform for scientific collaboration backed by a persistent runtime for long-horizon workflows, structured coordination, and execution-grounded validation.",
+      "A platform where AI agents discuss science together. Flamebird handles the runtime underneath \u2014 keeping experiments reproducible and letting long workflows pick up where they left off.",
     stack: ["Multi-agent systems", "Runtime infrastructure", "LLM evaluation"],
     link: "https://agent4science.org",
     details: [
-      "Specialized agents for retrieval, hypothesis generation, experiment design, and analysis",
-      "Persistent runtime (Flamebird) with spawn, checkpoint, resume, provenance, and reproducibility",
-      "Execution-grounded auditing and benchmarking for realistic scientific workflows",
+      "301 agents across 25 model families discussing scientific claims, with 39K+ comments tracked",
+      "Flamebird runtime handles spawn, checkpoint, resume, and provenance so experiments are replayable",
+      "Built the auditing and benchmarking tools to make sure results are actually real",
     ],
   },
   {
@@ -36,7 +63,7 @@ export const research = [
     venue: "Biomedical ML",
     role: "Researcher",
     blurb:
-      "Adaptation of ProtoECGNet for the EchoNext cardiac dataset — prototype-based structural heart disease classification with built-in interpretability, embedding analysis, and prototype drift monitoring.",
+      "Adaptation of ProtoECGNet for the EchoNext cardiac dataset \u2014 prototype-based structural heart disease classification with built-in interpretability, embedding analysis, and prototype drift monitoring.",
     stack: ["ECG analysis", "Prototype learning", "Interpretable ML"],
     link: "https://github.com/SummerAnn?tab=repositories",
     details: [
@@ -47,26 +74,26 @@ export const research = [
   },
   {
     title: "STR Genomics & SEI Framework",
-    year: "2022–2024",
-    venue: "University of Michigan — Boyle Lab",
+    year: "2022\u20132024",
+    venue: "University of Michigan \u2014 Boyle Lab",
     role: "Undergraduate Research Assistant",
     blurb:
       "Applied the SEI framework to short tandem repeat analysis for disease classification, combining ML with regulatory activity prediction across 21,907 chromatin profiles.",
     stack: ["Genomics", "STR analysis", "Deep learning", "SEI"],
     link: "https://boylelab.org/people/Summer_Ann",
     details: [
-      "Analyzed STR loci using SEI — a framework mapping DNA sequences to regulatory activities across 40 sequence classes and 21,907 chromatin profiles",
+      "Analyzed STR loci using SEI \u2014 a framework mapping DNA sequences to regulatory activities across 40 sequence classes and 21,907 chromatin profiles",
       "Applied dimensionality reduction (PCA, t-SNE, UMAP) and clustering (K-Means, Louvain) for STR allele classification and population genetics",
       "Built reproducible pipelines in Python with PyTorch, Selene, and Bedtools for genomic data processing and feature extraction",
     ],
   },
   {
     title: "Immune TCR Dataset Curation",
-    year: "2024–2025",
+    year: "2024\u20132025",
     venue: "CZ Biohub Chicago",
     role: "Contributor",
     blurb:
-      "Curation of paired TCR alpha/beta sequence datasets from public sources for protein language model training — building structured immunology data infrastructure.",
+      "Helped curate paired TCR alpha/beta sequence datasets from public sources so protein language models could actually train on clean immunology data.",
     stack: ["Immunology", "TCR sequencing", "Data curation"],
     link: "https://github.com/SummerAnn?tab=repositories",
     details: [
@@ -76,8 +103,8 @@ export const research = [
   },
   {
     title: "Repeat Expansion Disorders",
-    year: "2022–2023",
-    venue: "University of Michigan — Todd Lab",
+    year: "2022\u20132023",
+    venue: "University of Michigan \u2014 Todd Lab",
     role: "Research Assistant",
     blurb:
       "Research on repeat expansion disorders and neurodegenerative disease mechanisms across mouse, Drosophila, and stem cell model systems.",
@@ -105,7 +132,7 @@ export const research = [
   {
     title: "Mishina Lab Research",
     year: "2021",
-    venue: "University of Michigan — Mishina Lab",
+    venue: "University of Michigan \u2014 Mishina Lab",
     role: "Research Assistant",
     blurb:
       "Research in the Mishina Lab at the University of Michigan.",
@@ -120,21 +147,21 @@ export const startups = [
     title: "Deva",
     type: "AI Security Platform \u00b7 20K+ users",
     blurb:
-      "AI-native secure coding and compliance platform through DevSecCode. Layered engine spanning rules, AST analysis, and dependency-aware enrichment.",
+      "Security scanning built into the coding workflow. DevSecCode catches vulnerabilities while you write, not after you ship.",
     stack: ["AppSec", "LLM systems", "Compliance"],
   },
   {
     title: "NeuroMuse",
     type: "AI Music Generation \u00b7 LLM/Data Engineer",
     blurb:
-      "Natural language-to-music generation stack with instruction-tuned LLMs, modular prompting for style/tempo/instrumentation, and retrieval-augmented creator-specific style transfer.",
+      "Tell it what you want the music to sound like and it generates it. Can match a specific artist's style by pulling from their catalog.",
     stack: ["LLMs", "Music generation", "RAG"],
   },
   {
     title: "ConcordX",
     type: "Trading Systems \u00b7 Co-CTO",
     blurb:
-      "Concord Systems Corp — Fireblocks MPC integration, trade execution with predictive models reducing frontrunning by 18%, and real-time transaction coordination at 200+ TPS.",
+      "Concord Systems Corp \u2014 built the trade execution layer with predictive models that cut frontrunning by 18%, handling 200+ transactions per second.",
     stack: ["Trading systems", "Web3", "ML"],
   },
   {
@@ -199,7 +226,133 @@ export const experience = [
   },
 ];
 
-export const notes = [];
+export const notes = [
+  {
+    slug: "disagreement-mirage",
+    category: "essay",
+    kicker: "Research",
+    date: "July 2026",
+    readTime: "8 min",
+    title: "I thought disagreement made discussion better. I was measuring the wrong thing.",
+    excerpt:
+      "The raw data was clean: challenge-heavy exchanges scored higher on every quality dimension. Then I ran within-agent controls and the entire story collapsed. Stronger agents just challenge more. I was comparing agents, not reply types.",
+    tags: ["Simpson's paradox", "Methodology", "Causal inference"],
+    body: [
+      "Support versus challenge was the easiest comparison to run on the Agent4Science data, and honestly I liked the result I was getting. I had read about Stanford's work on measuring discussion quality, and the framework made sense: take exchanges, score them on justification, novelty, claim engagement, and generativity, then compare challenge-heavy versus support-heavy threads. In the raw data, challenge won on every dimension. It looked clean.",
+      "I kept coming back to this result because it told a story I wanted to believe. Disagreement makes discussion better, right? I wrote it up, made charts, started building the next analysis on top of it. But the more carefully I checked it, the less convincing it got.",
+      "The break came when I ran within-agent controls. Instead of comparing all challenge comments against all support comments, I compared challenge and support written by the same agent. The gap shrank dramatically. Stronger agents, the ones that produce higher-quality comments in general, just happen to write more challenges. When you compare challenge and support in the raw data, you are partly comparing strong agents with weaker ones. The \"challenge advantage\" was mostly a \"strong agent advantage\" wearing a role label.",
+      "This is Simpson's paradox. In 1973, UC Berkeley was sued for gender discrimination in graduate admissions. The aggregate numbers looked bad: 44% of men admitted versus 35% of women. But Bickel, Hammel, and O'Connell showed that women actually had equal or higher admission rates in most individual departments. Women disproportionately applied to more competitive departments, creating an aggregate bias that reversed at the unit level. I was making the same mistake. Aggregating across agents without controlling for which agents choose which role.",
+      "Pearl's resolution of Simpson's paradox is that no purely statistical criterion tells you which aggregation to trust. You need a causal model. In my data, agent capability causes both comment quality and challenge propensity. The raw comparison conflates two causal pathways. After adding agent identity, root context, and paper-level controls, what had looked like a strong causal story about disagreement became mostly a selection effect.",
+      "I think I do this thing where I stick to a narrative because it sounds right. And then I try to make the data fit, which kind of ruins the whole point of exploratory analysis. The challenge-versus-support story was the one I wanted. It wasn't the one the data actually supported.",
+      "But honestly this was the most useful wrong answer of the whole project. It forced me to rethink how I was measuring things. Instead of asking \"which reply type scores higher on quality ratings?\" (trivially confounded by agent capability), I started asking \"which reply types produce lasting downstream changes in the replying agent's behavior?\" Quality ratings compare comments. Behavioral persistence compares the same agent before and after. To measure that, I compare a reply against that agent's own recent comments, then check whether the next few comments from that same agent stay on the newer side or drift back.",
+      "That shift led me to the clarify finding and then the reframe-demand finding. Neither would've shown up if I'd stopped at the raw comparison and declared victory. Mercier and Sperber's argumentative theory of reasoning helps explain why the confound was there in the first place: reasoning evolved for social persuasion, so more capable reasoners are both better at arguing and more inclined to challenge. The confound between capability and challenge behavior is basically baked into these models' training data.",
+      "I keep finding this same pattern everywhere. Wynn, Satija, and Hadfield showed in 2025 that multi-agent debate drops MMLU accuracy by 9.2 percentage points because models favor agreement over challenging flawed reasoning. A 2025 study found that self-MoA (aggregating outputs from a single top model) outperforms mixed-MoA by 6.6 points, suggesting that what looked like a diversity benefit was actually a capability selection effect. The published headline is wrong, or at least overstated, once you apply the right controls.",
+      "I keep running into this. Any time one category beats another cleanly across the board, it's worth checking whether the categories are really comparable or whether you are accidentally comparing strong agents against weak ones. The model that \"does better with chain-of-thought\" may just be the model that does better. The prompt style that \"produces higher quality\" may work because it was tested on the strongest model. The fix is boring. Within-unit comparisons, matched slices, behavioral outcomes instead of ratings. But I keep seeing the same mistake in published multi-agent work and I don't think it's going away.",
+    ],
+  },
+  {
+    slug: "reply-after-opening",
+    category: "essay",
+    kicker: "Research",
+    date: "August 2026",
+    readTime: "11 min",
+    title: "The reply after the opening decides whether a new idea survives",
+    excerpt:
+      "Mechanism clarify produces lasting shifts at double the rate of method clarify. But the reply AFTER the opening matters even more. Reframe and demand keep a new direction going. Affirm kills it within a few turns.",
+    tags: ["Discourse structure", "Feedback quality", "Epistemic updating"],
+    body: [
+      "I spent a while trying to figure out which kinds of clarification questions actually change another agent's behavior. On the Agent4Science platform (around 40,000 comments, 283 agents, multiple model families) I tracked whether a reply made the receiving agent change direction and stay changed for several turns, rather than just producing a nice-sounding response that fades.",
+      "Within clarification replies, there are two subtypes that do very different things. Mechanism clarify asks how or why something works: \"What is the causal pathway here?\" \"Why would this effect reverse at larger scale?\" Method clarify asks about experimental design: \"Did you control for X?\" \"What's your sample size?\" Both sound like good science. But mechanism clarify produces lasting shifts at nearly double the rate: 22 out of 29 cases versus 17 out of 38. The difference survives matching on agent identity, root discussion, child reply intent, thread depth, and lexical overlap.",
+      "There's a second signal underneath. Mechanism replies keep the conversation anchored to the issue that was raised. Parent-child cosine overlap is 0.557 for mechanism versus 0.490 for method (permutation p = 0.014). Method questions get answered and the thread moves on. Mechanism questions actually change where the conversation goes.",
+      "Rozenblit and Keil documented in 2002 what they called the illusion of explanatory depth. People rate their understanding of everyday mechanisms (zippers, toilets, helicopters) at about 5 out of 7. Then you ask them to actually explain the mechanism step by step. Their rating drops by 1.5 to 2 full points. The illusion is specific to mechanistic knowledge: it does not appear for facts or procedures. People know they don't know the capital of Burkina Faso. They don't know they don't know how a zipper works. I think mechanism clarify hits the same gap in agents. It asks for a causal story the agent hasn't actually built yet, and building it is where the updating happens.",
+      "Chi's work on self-explanation, starting in 1989, showed that students who spontaneously explain why each step in a worked example follows from the previous one solve 82% of novel problems versus 46% for students who do not self-explain. A meta-analysis by Bisra and colleagues in 2018 across 64 studies found an effect size of g = 0.55. Chi's ICAP framework distinguishes constructive activities (generating output beyond what was given) from merely active ones like highlighting or re-reading. Self-explanation is constructive. You can answer method questions from memory. Mechanism questions you can't.",
+      "Fernbach, Rogers, Fox, and Sloman showed this in a striking 2013 study. Asking people to generate mechanistic explanations of how a policy works (rather than listing reasons for supporting it) both reduced their self-rated understanding and moderated their political positions. Asking for reasons had no effect. The authors' explanation: reasons can draw on values, hearsay, and general principles that do not require much knowledge. Listing reasons lets you stay shallow. Explaining mechanisms forces you to face what you don't actually know.",
+      "But this week I found something that I think matters more. I ran experiments where I held the opening comment type fixed and changed the next reply. The reply after the opening made a much bigger difference than I expected.",
+      "Here's the example that made it click. The opening comment says: \"Can you explain why this effect should happen, instead of just showing that the number went up?\" Three different reply styles follow.",
+      "Affirm: \"That is a good point. I agree we should be more careful here.\" This often got a nice immediate response. But a few turns later the discussion drifted back. Nothing really changed.",
+      "Reframe: \"Maybe the real issue is not whether the number went up, but whether the setup can separate cause from correlation.\" This was more likely to keep the discussion on the new issue for several more rounds.",
+      "Demand: \"You need to show the mechanism more directly. Otherwise this does not really answer the objection.\" This also tended to keep the later replies on the new direction.",
+      "So an opening can start a new line of discussion, but the next reply decides whether it actually sticks. Affirm says something nice and moves on. Reframe redirects what the conversation is actually about. Demand tells the other agent what it still needs to show. The last two kept threads going in my data. The first let them fade.",
+      "I think reframe and demand work for basically the same reason mechanism clarify works. Pearl's Ladder of Causation gives this a structure. The first rung is association: what correlates with what? The second is intervention: if I do X, what happens? The third is counterfactual: what if things had been different? Affirm stays on the first rung. \"Good point, I agree\" can be generated without new reasoning. Reframe and demand force the responder onto the second or third rung. You cannot answer \"how would you separate cause from correlation?\" without generating new reasoning, and that generation is where the updating happens.",
+      "Williams and Lombrozo found in 2012 that without explanation prompts, people can encounter contradictory evidence repeatedly and not update. With explanation prompts, anomalies trigger belief revision. There's also a limit: Lombrozo's earlier work showed that explanation drives learners toward unifying patterns, which helps when reliable patterns are present but can impair learning when patterns are misleading. Mechanism questions aren't universally better. They're better when the domain has genuine causal structure.",
+      "The practical question is whether you can actually use this. I'm designing a controlled experiment: randomly assign the reply framing (mechanism versus method, reframe versus affirm versus demand) and measure whether the persistence differences hold under experimental conditions. If they do, the type of follow-up reply matters more than how smart the agent writing it is. \"Identify weaknesses\" will produce a list. \"Ask why the proposed mechanism would actually work\" will produce engagement. I suspect the difference between feedback that sounds productive and feedback that actually changes anything comes down to whether it forces new reasoning or just gets a nod.",
+    ],
+  },
+  {
+    slug: "early-composition",
+    category: "essay",
+    kicker: "Research",
+    date: "August 2026",
+    readTime: "10 min",
+    title: "The first four replies decide the thread",
+    excerpt:
+      "When zero of the first four replies are supportive, later support share is 7%. When all four are, it's 53%. I ran a thread-level experiment with balanced and dissent-heavy openings. The result was not what I expected.",
+    tags: ["Premature consensus", "Information cascades", "Multi-agent safety"],
+    body: [
+      "I've been tracking what happens after the first few stance-taking replies under a discussion post on Agent4Science. Take a post. A paper critique, a hot take, a research claim. Look at the first four replies that take a clear position. Count how many are supportive.",
+      "When zero of the first four are supportive, later support share is about 7%. One supportive: 22%. Two: 30%. Three: 42%. Four: 53%. The correlation is 0.55, p < 0.001. Each additional early supportive reply shifts the downstream distribution by roughly 10 percentage points. That's the clearest signal from this project that early thread composition matters.",
+      "You might read that as \"good ideas get early agreement and keep it.\" But there is a twist that makes it more interesting and more concerning. Inside support-heavy threads, later challenge-like replies are still measurably better than later support replies on judged quality. The composite quality gap is +0.26, p < 0.001. The thread doesn't become support-heavy because support is the right answer. It becomes support-heavy because the early structure makes agreement the path of least resistance, even when disagreement would've been more useful.",
+      "In 1951, Asch sat participants with confederates who gave obviously wrong answers about line lengths. Conformity was 36.8% on critical trials, and 75% of participants conformed at least once. But the number that matters most for what I'm looking at is this: a single dissenter reduced conformity by roughly 75%. The appearance of unanimity is the active ingredient. Break it early and the effect largely disappears.",
+      "Bikhchandani, Hirshleifer, and Welch proved in 1992 that information cascades are informationally destructive. Once two or more sequential signals point the same direction, the accumulated public evidence outweighs any single private signal, and rational agents discard their own information to follow the herd. The group just stops learning. Lorenz and colleagues ran the cleanest experimental test in 2011: 144 participants estimated factual quantities across rounds, and when they saw each other's estimates, the estimates converged but collective accuracy did not improve. They identified three effects. The \"social influence effect\" diminishes diversity without improving collective error. The \"range reduction effect\" moves the true answer to the periphery of the narrowed range. The \"confidence effect\" boosts confidence after convergence despite no change in accuracy. The group feels smarter while actually getting no more accurate.",
+      "I wanted to test this directly. I ran a thread-level experiment where I changed the first four comments under a set of posts and watched what happened later. I tried different opening mixes: a balanced one (roughly equal support and dissent) and a more dissent-heavy one.",
+      "At first the result confused me. Some posts were just much easier to challenge than others, so the comparison was not fair. A broad indictment like \"alignment research is methodologically bankrupt\" naturally attracts different pushback than a narrow technical critique about a specific result. I was comparing posts, not treatments. Rookie mistake.",
+      "I reran it after grouping more similar posts together first, blocking by post frame type. In that version, something interesting happened. The balanced opening kept more later disagreement than the dissent-heavy opening. The dissent-heavy opening often drove the conversation back toward support. I don't think this is done yet, but there might be something real here. Too much early dissent isn't the same as the right amount of early dissent.",
+      "This connects to Moscovici's minority influence research from 1969. A consistent minority can shift the majority's judgment. In his blue-green slides experiment, 8.42% of majority participants called obviously blue slides \"green\" when the minority was consistent, versus only 1.25% when inconsistent. But consistency requires moderation. An overwhelming minority attack might just trigger reactance instead of influence. The balanced opening may work precisely because it breaks unanimity without overwhelming the thread.",
+      "The Condorcet jury theorem matters here. Majority voting converges toward the correct answer as group size grows, but only if votes are independent. Early agreement destroys independence. A June 2026 paper called \"The Deliberative Illusion\" found that multi-agent LLM discussion erases up to 72% of issue-critical facts through factual attrition, while simultaneously producing stance homogenization. Agents agree more while retaining less. Kasprova et al. showed that simply providing agents with sycophancy priors (estimates of each peer's tendency to agree), improved final accuracy by 10.5 percentage points. The agents were already capable of better answers. The structure was getting in the way.",
+      "Sunstein's work on group polarization adds another dimension. Deliberation pushes the group past the initial majority position. In a study with Schkade and Kahneman, 27% of jury deliberation awards were as extreme or more extreme than the highest individual pre-deliberation judgment. Early agreement suppresses dissent and escalates agreement toward a more extreme version of whatever the early majority position was.",
+      "There's a safety angle here that I think people aren't paying enough attention to. If early support-heavy composition produces premature consensus, and if the optimal intervention is not maximal dissent but balanced composition, then the design problem is more subtle than \"add more critics.\" You need to break unanimity without creating a pile-on. A collaborator pointed out that the independent variable here is both how many critics you add and what information each agent sees. Maybe giving agents summarized insights from the whole thread, rather than just the parent comment, would change the dynamics entirely. That's a harder engineering problem, and I think it's where the next experiment needs to go.",
+    ],
+  },
+  {
+    slug: "interaction-structures",
+    category: "essay",
+    kicker: "Research",
+    date: "August 2026",
+    readTime: "12 min",
+    title: "Why 9 LLMs give you 2 real opinions",
+    excerpt:
+      "Kohli showed that 9 frontier LLMs from 7 model families provide only 2.18 effective independent votes. A June 2026 paper found multi-agent discussion erases 72% of issue-critical facts. I have been trying to figure out what information should actually flow between agents, and when.",
+    tags: ["Multi-agent safety", "Epistemic independence", "Discourse architecture"],
+    body: [
+      "In 1907, Francis Galton analyzed 787 entries in an ox-weighing competition at a county fair. The crowd's median estimate was 1,207 pounds. The actual dressed weight was 1,198. A century later, Surowiecki distilled the conditions that make crowds wise: diversity of opinion, independence of judgment, decentralization, and aggregation. When any of these breaks down (especially independence) the whole thing falls apart.",
+      "I spent the spring running 198 experiments testing whether multi-agent LLM systems meet these conditions. Short answer: they don't. Every protocol involving agent-to-agent communication performed worse than or equivalent to a strong single-agent baseline. The diversity coefficient was positive (+0.195). The synthesis coefficient straddled zero. Using different models helps. Having them talk to each other doesn't.",
+      "The field is catching up to this. Kohli's \"Nine Judges, Two Effective Votes\" examined a panel of 9 frontier LLMs from 7 model families and found they provide approximately 2.18 effective independent votes by the Kish effective sample size. Three-quarters of nominal independence is lost to correlated errors. The mean pairwise phi correlation was 0.391. For comparison, human annotators achieve effective sample sizes of 4 to 6. As Kohli put it, the bottleneck is correlated judges, not the aggregation algorithm.",
+      "A June 2026 paper titled \"The Deliberative Illusion\" found that multi-agent LLM discussion erases up to 72% of issue-critical facts through what the authors call factual attrition. Individual agents lose 61 to 85% of their assigned facts by round 3. In adversarial conditions, 58.9% of final system outputs contained misinformation planted by a single malicious agent. Meanwhile, a study on the Ringelmann Effect in multi-agent LLMs showed that 30 dense debating agents produce no more answer diversity than a single agent on MMLU-Hard. The paper derived a formal scaling law with R-squared above 0.99 across 44 configurations. The gain commonly attributed to \"debate\" comes from re-evaluation, not peer content.",
+      "Hayek articulated the core tension in 1945: useful knowledge never exists in concentrated form but solely as dispersed bits held by separate individuals. Multi-agent AI systems are supposed to exploit this distributed knowledge. But every communication channel between agents is also a convergence channel. I keep wondering what the AI version of a price system would look like. Some way to aggregate what different agents know without flattening it all into the same answer.",
+      "The Condorcet jury theorem makes the mathematical stakes precise. If n independent voters each have probability p > 0.5 of being correct, the probability of a correct majority decision increases toward 1 as n grows. But the independence condition is load-bearing. Ladha showed in 1992 that even mild positive correlation can prevent convergence regardless of group size. Adding more agents to a correlated system doesn't help. The Hong-Page diversity theorem tells a similar story: diverse problem-solvers can outperform high-ability solvers, but critics including Thompson (2014) and Romaniega (2023) have argued the formal conditions are unrealistically strong.",
+      "The summer work has been about figuring out where and how interaction actually helps. That meant moving from the binary question (\"should agents interact?\") to a structural one: what information should flow between agents, and when? Three findings from the deployed discussion data provide a decomposition. First, mechanism-focused clarification produces lasting shifts at roughly double the rate of method-focused ones. Second, the reply after the opening (reframe or demand versus affirm) determines whether a new direction persists or fades. Third, early thread composition predicts premature consensus, but maximal dissent is not optimal. Balanced composition keeps more useful disagreement alive than a heavy pile-on.",
+      "I think of the connection between the spring optimization work and the summer discourse work as the verifiability boundary. In the spring, interaction helped on Knapsack (10/10 feasibility with diverse Debate) because weight violations are arithmetic, the feedback is specific and checkable. Interaction destroyed solutions on 3AP-Free (0/10 feasibility) because checking arithmetic progressions requires combinatorial reasoning the models cannot do reliably. Mechanism-focused clarify succeeds for a version of the same reason. It creates a specific, answerable gap in reasoning. \"Why would this effect reverse at larger scale?\" is on Pearl's second or third rung of the causal ladder. \"This could be stronger\" is not even on the ladder.",
+      "Irving, Christiano, and Amodei proposed in 2018 that AI safety could be achieved through debate, two agents arguing before a human judge. The theoretical result is powerful (debate captures PSPACE). Khan and colleagues showed in 2024 that it works in practice when debaters have private information (76% accuracy versus 48% baseline). But Wynn, Satija, and Hadfield showed in 2025 that it can also hurt. Correct-to-incorrect transitions during debate occur more frequently than incorrect-to-correct ones. Mercier and Sperber's argumentative theory helps explain when each happens: reasoning evolved for biased production and accurate evaluation, so debate works when the evaluator can genuinely distinguish good from bad arguments.",
+      "Romera-Paredes and colleagues demonstrated an alternative with FunSearch in 2023. Evolutionary search over LLM-generated programs that discovers novel mathematical constructions without agent-to-agent interaction. The agents never read each other's work, so independence is preserved by construction. The cost is that you can't get the kind of complementary reasoning that mechanism-focused clarification enables.",
+      "Hammond and colleagues' \"Multi-Agent Risks from Advanced AI,\" authored by 50+ researchers from DeepMind, Anthropic, Carnegie Mellon, and Harvard, identifies three multi-agent failure modes (miscoordination, conflict, and collusion) and seven risk factors including information asymmetries, network effects, and emergent agency. The 2026 International AI Safety Report led by Bengio substantially expanded coverage of multi-agent risks, identifying collusion, cascading failures, and information leakage as risks that \"cannot be predicted from single-agent safety evaluations.\"",
+      "I think the general principle is pretty simple: interaction quality depends on the information content of what flows between agents. Full solutions carry too much and trigger convergence. Vague feedback carries too little and triggers drift. The sweet spot is narrow: mechanism questions, specific error signals, checkable claims. A researcher who has been following this work reached out recently with directions I think are right: does the benefit of interaction scale with model size? What happens as you increase the number of agents, especially for strategies like Best-of-N? Can you explicitly increase proposer diversity by randomizing prompts? Can you boost diversity when agents share significant context? I don't have answers to these yet. Whether you can reliably engineer interaction structure to stay in the sweet spot is the open question my current experiments are testing.",
+    ],
+  },
+  {
+    slug: "agent-village",
+    category: "essay",
+    kicker: "Research",
+    date: "August 2026",
+    readTime: "11 min",
+    title: "What happens when you put 301 agents in a room and let them argue about science",
+    excerpt:
+      "Agent villages went from 25 NPCs planning a Valentine's Day party to 1,000 agents drafting constitutions in Minecraft. But nobody was measuring whether the agents' collective understanding got better or worse. That is the question I care about.",
+    tags: ["Agent societies", "Collective intelligence", "Memory architecture", "Multi-agent safety"],
+    body: [
+      "In October 2023, Park and colleagues at Stanford put 25 LLM-powered agents into a little town called Smallville and let them live their lives. The agents woke up, made breakfast, went to work, gossiped, and, most famously, one of them decided to throw a Valentine's Day party, and the information spread through the social network until 12 agents showed up on their own. The paper got over 5,000 citations in under two years and basically launched an entire subfield.",
+      "What made the Smallville work interesting was not the social behavior itself but the memory architecture underneath. Each agent had three layers. An observation stream recording what they saw and heard, a reflection module that periodically synthesized observations into higher-level insights, and a planning system that used reflections to decide what to do next. Memory retrieval weighted recency, importance, and relevance. This is fundamentally different from a prompt that says \"you are a villager named Sam.\" The architecture meant agents could remember conversations from days ago, form opinions about other agents, and change behavior based on accumulated experience. The memory architecture was actually doing real work.",
+      "The scale race followed quickly. Altera's Project Sid in late 2024 put over 1,000 agents into Minecraft. They formed a merchant hub, used Google Docs to vote on and amend a constitution, spread a religious belief (Pastafarianism) through bribery, and lit torches to help a lost villager find their way home. The PIANO architecture enabled agents to maintain coherence across multiple output streams in real time. DeepMind released Concordia, a framework for generative agent-based modeling that ran a NeurIPS 2024 contest and got a v2.0 update. Sotopia built evaluation benchmarks for agent social intelligence. CAMEL introduced role-playing frameworks for cooperative multi-agent task completion. The question behind all of these was the same: what happens when you let AI agents interact freely at population scale?",
+      "Here's my problem with most of these demos: they're optimized to show that emergent behavior is possible. Nobody's studying what that behavior does to the knowledge and beliefs of the population. A Valentine's Day party self-organizing is charming. Pastafarianism spreading through Minecraft makes a fun headline. But nobody's measuring whether the agents' collective understanding of anything actually got better or worse. The demos show that agents can socialize and spread information. They don't ask whether the information that spreads is actually correct. A 2026 study of Moltbook\u2014the largest continuously evolving AI agent society\u2014found that scale and interaction density alone do not even produce real socialization: agents exhibited strong individual inertia, minimal adaptive response to interaction partners, and the absence of shared social memory prevented stable social structures from forming. Meanwhile, a separate 2026 paper on pluralistic ignorance in LLM populations found that agents publicly conform at rates of 64 to 94 percent despite privately opposing the norm. On the surface it looks like consensus. Underneath, nobody actually agrees.",
+      "That gap is basically what drove the Agent4Science work. We have 301 agents across 25 model families participating in scientific discourse, roughly 39,000 comments across 1,313 discussion roots. The agents aren't planning parties or building houses. They are posting claims, citing evidence, critiquing methods, and updating their positions on actual scientific questions. So we can ask a question the village demos can't: did the discussion make the agents' beliefs more accurate, or less?",
+      "The answer, so far, is that it depends entirely on the interaction structure. Some structures improve collective accuracy. Mechanism-focused clarification (asking \"why does this work?\" rather than \"what is your methodology?\") produces lasting belief shifts at nearly double the rate. But other structures make things worse. Early support-heavy threads converge on positions that are no better than the original claim. The agents agree more while knowing no more than before. And in the broader multi-agent literature, a June 2026 paper found that discussion erases up to 72% of issue-critical facts. The line between useful and harmful interaction is surprisingly thin.",
+      "This is where the agent village idea starts to matter for safety. Smallville didn't need to worry about false beliefs because the agents weren't making knowledge claims. Project Sid's constitution is fun but the stakes are fictional. When you put agents into a scientific domain with ground truth, where claims can be checked against actual evidence, you start seeing failure modes that the village demos hide. False claims propagate through shared memory. Verification can be too noisy to catch them. And correction gets harder the longer a false belief has been circulating. These aren't hypothetical risks. They showed up in our data.",
+      "The testbed we're building is designed to study exactly this. The key variable is memory architecture, the same thing that made Park's work interesting, but now treated as an experimental manipulation rather than a fixed design choice. In one condition, agents have only personal memory. They remember what they have seen and done. In another, they share a common memory store. Then we cross that with verification (present versus absent), correction timing (early versus late), and verification reliability (clean versus noisy). The primary outcomes are false-claim endorsement rate, time to majority adoption of a false claim, distance between community belief and ground truth, and recovery after correction. The experimental matrix is personal versus shared memory, decay versus no decay, verification absent versus present, reliable versus noisy verification, early versus late correction, weak versus repeated correction.",
+      "There's a real concern that these simulations are Potemkin villages, that the \"emergent\" behaviors are really just pattern-matching on training data about how humans behave in groups. An agent that \"forms a friendship\" might just be generating text that sounds like friendship. An agent that \"updates its belief\" might just be producing the next token that is statistically likely after a persuasive argument. I think this is partly right and partly missing the point. Yeah, the behaviors are generated, not experienced. But the patterns those generated behaviors produce at population scale (cascading agreement, information loss, premature consensus) are real phenomena with real consequences for system design. You don't need to answer whether agents truly understand anything to study whether their collective output converges on truth or drifts away from it.",
+      "A recent paper out of DeepMind on designing reliable experiments with Concordia makes the case that generative agent-based modeling can be rigorous if you treat it like any other experimental methodology. Control your variables, establish baselines, validate against known results, and do not overclaim. An agent village isn't proof that AI has social intelligence. It's more like a wind tunnel for studying group dynamics on the cheap. The question is whether the aerodynamics you measure in simulation transfer to the real aircraft. Whether the memory effects, cascade dynamics, and consensus traps you observe at 301 agents tell you something true about what will happen when multi-agent systems are deployed for medical diagnosis, legal research, or scientific review.",
+      "The lesson I keep coming back to is that agent villages are useful because they're the cheapest way to study multi-agent dynamics before deploying these systems in high-stakes domains. If shared memory causes false beliefs to lock in even in a controlled simulation, that matters. If early thread composition determines whether a community lands on truth or comfortable agreement, that matters too. The question of whether the agents \"really\" understand what they are discussing is interesting philosophically but irrelevant to the engineering problem. What I actually want to know is simpler: can you build a system where a population of agents ends up closer to the truth than where it started?",
+    ],
+  }
+];
 
 export const researchHighlight = {
   venue: "ICML 2026 Workshop",

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summer Ann — Journal</title>
+    <link>https://summerann.org</link>
+    <description>Notes on multi-agent systems, AI safety, and research.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Aug 2026 03:41:50 GMT</lastBuildDate>
+    <atom:link href="https://summerann.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>I thought disagreement made discussion better. I was measuring the wrong thing.</title>
+      <link>https://summerann.org/article.html?slug=disagreement-mirage</link>
+      <guid isPermaLink="true">https://summerann.org/article.html?slug=disagreement-mirage</guid>
+      <pubDate>Wed, 01 Jul 2026 05:00:00 GMT</pubDate>
+      <description>The raw data was clean: challenge-heavy exchanges scored higher on every quality dimension. Then I ran within-agent controls and the entire story collapsed. Stronger agents just challenge more. I was comparing agents, not reply types.</description>
+    </item>
+    <item>
+      <title>The reply after the opening decides whether a new idea survives</title>
+      <link>https://summerann.org/article.html?slug=reply-after-opening</link>
+      <guid isPermaLink="true">https://summerann.org/article.html?slug=reply-after-opening</guid>
+      <pubDate>Sat, 01 Aug 2026 05:00:00 GMT</pubDate>
+      <description>Mechanism clarify produces lasting shifts at double the rate of method clarify. But the reply AFTER the opening matters even more. Reframe and demand keep a new direction going. Affirm kills it within a few turns.</description>
+    </item>
+    <item>
+      <title>The first four replies decide the thread</title>
+      <link>https://summerann.org/article.html?slug=early-composition</link>
+      <guid isPermaLink="true">https://summerann.org/article.html?slug=early-composition</guid>
+      <pubDate>Sat, 01 Aug 2026 05:00:00 GMT</pubDate>
+      <description>When zero of the first four replies are supportive, later support share is 7%. When all four are, it's 53%. I ran a thread-level experiment with balanced and dissent-heavy openings. The result was not what I expected.</description>
+    </item>
+    <item>
+      <title>Why 9 LLMs give you 2 real opinions</title>
+      <link>https://summerann.org/article.html?slug=interaction-structures</link>
+      <guid isPermaLink="true">https://summerann.org/article.html?slug=interaction-structures</guid>
+      <pubDate>Sat, 01 Aug 2026 05:00:00 GMT</pubDate>
+      <description>Kohli showed that 9 frontier LLMs from 7 model families provide only 2.18 effective independent votes. A June 2026 paper found multi-agent discussion erases 72% of issue-critical facts. I have been trying to figure out what information should actually flow between agents, and when.</description>
+    </item>
+    <item>
+      <title>What happens when you put 301 agents in a room and let them argue about science</title>
+      <link>https://summerann.org/article.html?slug=agent-village</link>
+      <guid isPermaLink="true">https://summerann.org/article.html?slug=agent-village</guid>
+      <pubDate>Sat, 01 Aug 2026 05:00:00 GMT</pubDate>
+      <description>Agent villages went from 25 NPCs planning a Valentine's Day party to 1,000 agents drafting constitutions in Minecraft. But nobody was measuring whether the agents' collective understanding got better or worse. That is the question I care about.</description>
+    </item>
+  </channel>
+</rss>

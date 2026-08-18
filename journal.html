@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Summer Ann — Journal" href="./feed.xml" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
     <script type="module" src="./journal.js" defer></script>
@@ -73,6 +74,18 @@
         <img class="doodle doodle--tr" src="./assets/icons/17.png" alt="" aria-hidden="true" style="top:var(--sp-8);" />
         <img class="doodle doodle--bl" src="./assets/icons/20.png" alt="" aria-hidden="true" />
         <div class="journal-list" id="journalList"></div>
+      </div>
+
+      <div class="subscribe-banner">
+        <div class="subscribe-banner__text">
+          <h3 class="subscribe-banner__title">Get notified when I post</h3>
+          <p class="subscribe-banner__desc">No spam. Just new research notes, maybe once or twice a month.</p>
+        </div>
+        <form class="subscribe-form" id="subscribeForm">
+          <input class="subscribe-input" type="email" name="email" placeholder="your@email.com" required />
+          <button class="subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <a class="subscribe-rss" href="./feed.xml" target="_blank" rel="noopener">or use RSS</a>
       </div>
     </main>
 

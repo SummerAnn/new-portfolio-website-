@@ -156,6 +156,60 @@ if (startupGrid) {
       `,
     )
     .join("");
+
+  /* ── Startup Carousel: drag-to-scroll ── */
+  let sIsDragging = false, sStartX = 0, sScrollStart = 0, sHasDragged = false;
+
+  startupGrid.addEventListener("mousedown", (e) => {
+    sIsDragging = true;
+    sHasDragged = false;
+    sStartX = e.pageX - startupGrid.offsetLeft;
+    sScrollStart = startupGrid.scrollLeft;
+    startupGrid.style.scrollBehavior = "auto";
+  });
+
+  startupGrid.addEventListener("mousemove", (e) => {
+    if (!sIsDragging) return;
+    e.preventDefault();
+    const x = e.pageX - startupGrid.offsetLeft;
+    const walk = (x - sStartX) * 1.5;
+    if (Math.abs(walk) > 4) sHasDragged = true;
+    startupGrid.scrollLeft = sScrollStart - walk;
+  });
+
+  const stopStartupDrag = () => {
+    sIsDragging = false;
+    startupGrid.style.scrollBehavior = "smooth";
+  };
+  startupGrid.addEventListener("mouseup", stopStartupDrag);
+  startupGrid.addEventListener("mouseleave", stopStartupDrag);
+
+  startupGrid.addEventListener("click", (e) => {
+    if (sHasDragged) e.preventDefault();
+  }, true);
+
+  /* ── Startup Carousel: dot indicators ── */
+  const startupDotsWrap = document.querySelector("#startupDots");
+  if (startupDotsWrap) {
+    const cards = startupGrid.querySelectorAll(".startup-entry");
+    cards.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot" + (i === 0 ? " is-active" : "");
+      dot.ariaLabel = `Go to startup ${i + 1}`;
+      dot.addEventListener("click", () => {
+        cards[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+      });
+      startupDotsWrap.appendChild(dot);
+    });
+
+    const dots = startupDotsWrap.querySelectorAll(".carousel-dot");
+    startupGrid.addEventListener("scroll", () => {
+      const scrollLeft = startupGrid.scrollLeft;
+      const cardWidth = cards[0].offsetWidth + 24;
+      const activeIdx = Math.round(scrollLeft / cardWidth);
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === activeIdx));
+    });
+  }
 }
 
 const appsGrid = document.querySelector("#appsGrid");
@@ -171,6 +225,61 @@ if (appsGrid) {
       `,
     )
     .join("");
+
+  /* ── Carousel: drag-to-scroll ── */
+  let isDragging = false, startX = 0, scrollStart = 0, hasDragged = false;
+
+  appsGrid.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    hasDragged = false;
+    startX = e.pageX - appsGrid.offsetLeft;
+    scrollStart = appsGrid.scrollLeft;
+    appsGrid.style.scrollBehavior = "auto";
+  });
+
+  appsGrid.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - appsGrid.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 4) hasDragged = true;
+    appsGrid.scrollLeft = scrollStart - walk;
+  });
+
+  const stopDrag = () => {
+    isDragging = false;
+    appsGrid.style.scrollBehavior = "smooth";
+  };
+  appsGrid.addEventListener("mouseup", stopDrag);
+  appsGrid.addEventListener("mouseleave", stopDrag);
+
+  // Prevent click navigation when dragging
+  appsGrid.addEventListener("click", (e) => {
+    if (hasDragged) e.preventDefault();
+  }, true);
+
+  /* ── Carousel: dot indicators ── */
+  const dotsWrap = document.querySelector("#carouselDots");
+  if (dotsWrap) {
+    const cards = appsGrid.querySelectorAll(".app-entry");
+    cards.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot" + (i === 0 ? " is-active" : "");
+      dot.ariaLabel = `Go to app ${i + 1}`;
+      dot.addEventListener("click", () => {
+        cards[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+      });
+      dotsWrap.appendChild(dot);
+    });
+
+    const dots = dotsWrap.querySelectorAll(".carousel-dot");
+    appsGrid.addEventListener("scroll", () => {
+      const scrollLeft = appsGrid.scrollLeft;
+      const cardWidth = cards[0].offsetWidth + 24; // card + gap
+      const activeIdx = Math.round(scrollLeft / cardWidth);
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === activeIdx));
+    });
+  }
 }
 
 const experienceRow = document.querySelector("#experienceRow");
@@ -492,7 +601,7 @@ const setupGsap = () => {
 
   /* Section reveals — staggered, obvious offset */
   gsap.utils
-    .toArray(".section__header, .work-panel.is-active .research-entry, .about-card, .note-preview, .contact-body")
+    .toArray(".section__header, .work-panel.is-active .research-entry, .note-preview, .contact-body")
     .forEach((item) => {
       gsap.from(item, {
         y: 40,
@@ -505,6 +614,47 @@ const setupGsap = () => {
         },
       });
     });
+
+  /* Practice cards — progressive blur reveal on scroll */
+  document.querySelectorAll(".about-card").forEach((card, i) => {
+    ScrollTrigger.create({
+      trigger: card,
+      start: "top 85%",
+      once: true,
+      onEnter: () => {
+        setTimeout(() => card.classList.add("is-revealed"), i * 150);
+      },
+    });
+  });
 };
 
 window.addEventListener("load", setupGsap);
+
+/* ── Subscribe Form ──────────────────────────────────── */
+
+function handleSubscribe(form) {
+  if (!form) return;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = form.querySelector('input[name="email"]').value;
+    if (!email) return;
+
+    // Store locally (connect to Buttondown/Formspree/etc later)
+    const subs = JSON.parse(localStorage.getItem("subscribers") || "[]");
+    if (!subs.includes(email)) {
+      subs.push(email);
+      localStorage.setItem("subscribers", JSON.stringify(subs));
+    }
+
+    // Replace form with success message
+    const parent = form.parentElement;
+    form.remove();
+    const msg = document.createElement("p");
+    msg.className = "subscribe-success";
+    msg.textContent = "You're in. I'll email you when something new goes up.";
+    parent.insertBefore(msg, parent.querySelector(".subscribe-rss"));
+  });
+}
+
+handleSubscribe(document.querySelector("#subscribeForm"));
+handleSubscribe(document.querySelector("#subscribeFormHome"));
