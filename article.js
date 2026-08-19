@@ -24,7 +24,8 @@ const articleAside = document.querySelector("#articleAside");
 const footerYear = document.querySelector("#footerYear");
 
 const tocLabel = (str, maxLen) => {
-  const words = str.split(" ");
+  const plain = str.replace(/<[^>]*>/g, "");
+  const words = plain.split(" ");
   let result = "";
   for (const word of words) {
     if ((result + " " + word).trim().length > maxLen) break;

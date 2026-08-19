@@ -2399,6 +2399,17 @@ ul { margin: 0; padding: 0; }
   margin-top: var(--sp-4);
 }
 
+.article-body a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s;
+}
+.article-body a:hover {
+  text-decoration-color: var(--fg);
+}
+
 /* ── Article aside (author card) ─────────────────────────── */
 
 .article-aside {
