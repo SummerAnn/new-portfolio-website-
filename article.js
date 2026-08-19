@@ -57,7 +57,9 @@ const renderArticle = (note) => {
       ${note.body
         .map(
           (paragraph, i) =>
-            `<p id="section-${i + 1}">${paragraph}</p>`
+            paragraph.trimStart().startsWith("<div")
+              ? `<div id="section-${i + 1}">${paragraph}</div>`
+              : `<p id="section-${i + 1}">${paragraph}</p>`
         )
         .join("")}
     </div>

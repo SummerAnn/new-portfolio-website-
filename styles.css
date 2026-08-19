@@ -2182,6 +2182,24 @@ ul { margin: 0; padding: 0; }
   gap: var(--sp-1);
 }
 
+.journal-index__sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-top: var(--sp-1);
+}
+
+.sort-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  opacity: 0.5;
+  margin-right: var(--sp-1);
+}
+
 .filter-chip {
   font-family: var(--font-mono);
   font-size: var(--text-micro-sm);
@@ -2408,6 +2426,35 @@ ul { margin: 0; padding: 0; }
 }
 .article-body a:hover {
   text-decoration-color: var(--fg);
+}
+
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 65ch;
+  margin: var(--sp-4) 0;
+  border-radius: 4px;
+  background: var(--bg-inv);
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  position: absolute;
+  bottom: -1.75rem;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro-sm);
+  color: var(--fg-muted);
 }
 
 /* ── Article aside (author card) ─────────────────────────── */

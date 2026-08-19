@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summer Ann — Journal</title>
     <meta name="description" content="Notes on multi-agent systems, AI safety, secure developer tooling, biomedical ML, and product engineering." />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://summer-ann.com/journal.html" />
+    <meta property="og:title" content="Summer Ann — Journal" />
+    <meta property="og:description" content="Notes on multi-agent systems, AI safety, secure developer tooling, biomedical ML, and product engineering." />
+    <meta property="og:image" content="https://summer-ann.com/assets/og-journal.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Summer Ann — Journal" />
+    <meta name="twitter:description" content="Notes on multi-agent systems, AI safety, secure developer tooling, biomedical ML, and product engineering." />
+    <meta name="twitter:image" content="https://summer-ann.com/assets/og-journal.png" />
     <script>
       (function(){var t=localStorage.getItem('theme');if(!t)t='light';document.documentElement.dataset.theme=t})();
     </script>
@@ -62,6 +75,12 @@
             <button class="filter-chip" type="button" data-filter="essay">Essays</button>
             <button class="filter-chip" type="button" data-filter="process">Process</button>
             <button class="filter-chip" type="button" data-filter="field">Field Notes</button>
+          </div>
+          <div class="journal-index__sort" id="sortRow">
+            <span class="sort-label">Sort</span>
+            <button class="filter-chip is-active" type="button" data-sort="recent">Recent</button>
+            <button class="filter-chip" type="button" data-sort="oldest">Oldest</button>
+            <button class="filter-chip" type="button" data-sort="popular">Popular</button>
           </div>
         </div>
         <div class="journal-photo" id="journalPhoto">

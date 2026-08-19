@@ -20,6 +20,7 @@ if (themeToggle) {
 
 const journalList = document.querySelector("#journalList");
 const filterRow = document.querySelector("#filterRow");
+const sortRow = document.querySelector("#sortRow");
 const footerYear = document.querySelector("#footerYear");
 
 const renderEntry = (note) => `
@@ -34,9 +35,62 @@ const renderEntry = (note) => `
   </a>
 `;
 
-if (journalList) {
-  journalList.innerHTML = notes.map(renderEntry).join("");
+/* ── Sorting helpers ──────────────────────────────────── */
+
+const MONTH_ORDER = {
+  january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+  july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+};
+
+function parseDateValue(dateStr) {
+  // "August 2026", "July 2026", "Summer 2023" etc.
+  const parts = dateStr.toLowerCase().split(/\s+/);
+  const year = parseInt(parts.find((p) => /^\d{4}$/.test(p)) || "0", 10);
+  const monthStr = parts.find((p) => p in MONTH_ORDER);
+  const month = monthStr ? MONTH_ORDER[monthStr] : 6; // default mid-year
+  return year * 12 + month;
 }
+
+function parseReadMin(readTime) {
+  const m = readTime.match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+function sortNotes(list, mode) {
+  const sorted = [...list];
+  if (mode === "recent") {
+    sorted.sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  } else if (mode === "oldest") {
+    sorted.sort((a, b) => parseDateValue(a.date) - parseDateValue(b.date));
+  } else if (mode === "popular") {
+    sorted.sort((a, b) => parseReadMin(b.readTime) - parseReadMin(a.readTime));
+  }
+  return sorted;
+}
+
+/* ── State ────────────────────────────────────────────── */
+
+let currentSort = "recent";
+let currentFilter = "all";
+
+function renderList() {
+  if (!journalList) return;
+  const sorted = sortNotes(notes, currentSort);
+  journalList.innerHTML = sorted.map(renderEntry).join("");
+  applyFilter();
+}
+
+function applyFilter() {
+  if (!journalList) return;
+  journalList.querySelectorAll(".journal-entry").forEach((entry) => {
+    const matches =
+      currentFilter === "all" ||
+      entry.getAttribute("data-category") === currentFilter;
+    entry.classList.toggle("is-hidden", !matches);
+  });
+}
+
+renderList();
 
 if (footerYear) {
   footerYear.textContent = String(new Date().getFullYear());
@@ -51,16 +105,32 @@ if (filterRow && journalList) {
     const filter = button.dataset.filter;
     if (!filter) return;
 
+    currentFilter = filter;
+
     filterRow.querySelectorAll(".filter-chip").forEach((chip) => {
       chip.classList.toggle("is-active", chip === button);
     });
 
-    journalList.querySelectorAll(".journal-entry").forEach((entry) => {
-      const matches =
-        filter === "all" ||
-        entry.getAttribute("data-category") === filter;
-      entry.classList.toggle("is-hidden", !matches);
+    applyFilter();
+  });
+}
+
+/* ── Sort ─────────────────────────────────────────────── */
+
+if (sortRow && journalList) {
+  sortRow.addEventListener("click", (event) => {
+    const button = event.target;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const sort = button.dataset.sort;
+    if (!sort) return;
+
+    currentSort = sort;
+
+    sortRow.querySelectorAll(".filter-chip").forEach((chip) => {
+      chip.classList.toggle("is-active", chip === button);
     });
+
+    renderList();
   });
 }
 
