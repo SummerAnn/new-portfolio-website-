@@ -43,12 +43,14 @@ const MONTH_ORDER = {
 };
 
 function parseDateValue(dateStr) {
-  // "August 2026", "July 2026", "Summer 2023" etc.
-  const parts = dateStr.toLowerCase().split(/\s+/);
+  // "August 19, 2026", "July 2026", "Summer 2023" etc.
+  const parts = dateStr.toLowerCase().replace(",", "").split(/\s+/);
   const year = parseInt(parts.find((p) => /^\d{4}$/.test(p)) || "0", 10);
   const monthStr = parts.find((p) => p in MONTH_ORDER);
   const month = monthStr ? MONTH_ORDER[monthStr] : 6; // default mid-year
-  return year * 12 + month;
+  const dayStr = parts.find((p) => /^\d{1,2}$/.test(p));
+  const day = dayStr ? parseInt(dayStr, 10) : 15; // default mid-month
+  return year * 372 + month * 31 + day;
 }
 
 function parseReadMin(readTime) {
