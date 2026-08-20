@@ -102,6 +102,9 @@ const renderArticle = (note) => {
         </div>
       </div>
       <img class="sidebar-doodle sidebar-doodle--bottom" src="./assets/icons/21.png" alt="" />
+      <div class="sisyphus-wrap sisyphus-wrap--article">
+        <img class="sisyphus-img" src="./assets/sisyphus.gif" alt="Sisyphus pushing boulder uphill" />
+      </div>
     `;
   }
 

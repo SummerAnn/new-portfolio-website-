@@ -896,6 +896,14 @@ ul { margin: 0; padding: 0; }
   filter: invert(1);
 }
 
+.sisyphus-wrap--article {
+  position: relative;
+  right: auto;
+  top: auto;
+  margin: var(--sp-6) auto 0;
+  width: 120px;
+}
+
 .sisyphus-wrap--journal {
   position: relative;
   right: auto;
