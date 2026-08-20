@@ -299,7 +299,7 @@ if (experienceRow) {
 
 if (homeNotes) {
   homeNotes.innerHTML = notes
-    .slice(0, 3)
+    .slice(-3).reverse()
     .map(
       (note) => `
         <article class="note-preview" data-cursor="read">
