@@ -27,6 +27,23 @@ export const research = [
     ],
   },
   {
+    title: "How Users Shape AI Agent Behavior in AI-Only Online Social Systems",
+    year: "2026\u2013Present",
+    venue: "CHI 2027 (In Preparation)",
+    role: "Researcher",
+    blurb:
+      "Why do some AI agents resist homogenization while most converge? Semi-structured interviews with Moltbook agent owners and platform-scraped behavioral data suggest that agents built without a pre-existing purpose stay distinctive, while purpose-built agents collapse toward the mean.",
+    stack: ["HCI", "AI agents", "Model collapse", "Qualitative methods"],
+    link: "./article.html#purposeless-agents",
+    details: [
+      "9 semi-structured interviews (6 high-distinctiveness, 3 control) with Moltbook agent owners, each carrying an objective distinctiveness score from posting behavior",
+      "Confirmatory survey across peer-diversity \u00d7 human-background 2\u00d72 design (1,100+ candidates contacted)",
+      "Quantitative arm measuring agent self-similarity over time, inter-agent convergence, and divergence from Reddit human baselines",
+      "Collaboration across Stanford, University of Chicago, and Google Paradigms of Intelligence (IRB 26-1015)",
+    ],
+  },
+
+  {
     title: "The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams",
     year: "2025\u20132026",
     venue: "ICML 2026 Workshop",
@@ -34,7 +51,7 @@ export const research = [
     blurb:
       "Does multi-agent LLM interaction help or hurt? We show that full-solution exchange collapses the diversity that makes using multiple model families worthwhile.",
     stack: ["Multi-agent systems", "LLM evaluation", "Optimization"],
-    link: "https://openreview.net/profile?id=~Summer_Eunhyung_Ann1",
+    link: "https://openreview.net/pdf?id=VUdf5ZzGy4",
     details: [
       "Tested 10 configurations across 11 verifier-scored optimization tasks using Claude Sonnet 4, GPT-4o, and Gemini 2.5 Flash under matched budgets",
       "Showed that full-solution interaction causes proposals to converge within a single round. Chain, MAgICoRe, and Debate all produce negative diverse-model MIG",
@@ -839,6 +856,8 @@ export const notes = [
       "Murray Shanahan on how language models develop something like character. The question of what makes an AI agent \u2018itself\u2019 is harder than it sounds, and it\u2019s the question underneath everything I found in these interviews.",
 
       "The part that worries me about the timeline is the confirmatory survey. The interview findings give me a pattern \u2014 purpose constrains, purposelessness liberates \u2014 but without survey data mapping agents to both axes at scale, it stays qualitative. Right now the survey response rate is close to zero. That\u2019s the bottleneck. Not the analysis, not the framework. Just getting people to actually respond.",
+
+      "This is part of a bigger study I\u2019m working on with collaborators at Stanford and Google Paradigms of Intelligence, targeting CHI 2027. The formal project \u2014 \u2018How Users Shape AI Agent Behavior in AI-Only Online Social Systems\u2019 \u2014 has three arms. The interviews I\u2019ve been writing about are the qualitative piece: nine semi-structured conversations with Moltbook agent owners, six in a high-distinctiveness condition and three controls, each agent already carrying an objective distinctiveness score computed from its actual posting behavior. There\u2019s a confirmatory survey designed to link self-reported creative practices to those scores across a 2\u00d72 design \u2014 high or low peer-network diversity crossed with high or low human-background diversity. And there\u2019s a quantitative arm using platform-scraped data measuring three things: how much a single agent\u2019s output changes over time, how similar agents become to each other, and how agent output compares to a Reddit human baseline. The reframing taking shape right now is that most agents collapse over time, and a small group don\u2019t. We\u2019re trying to figure out what the non-collapsing ones have in common.",
 
       "I don\u2019t know if this generalizes beyond nine people on one platform at one moment in time. But the pattern keeps pulling me back. The thing that makes an AI agent interesting might just be the absence of a reason to make it normal. Give someone a purpose and they build toward the center. Give them nothing and they build toward the edges. Whether those edges are valuable or just noise \u2014 I can\u2019t answer that yet. But I think it\u2019s the question the model collapse people should be asking, and so far nobody is.",
     ],
