@@ -8,7 +8,13 @@ export const research = [
       "Ongoing. Studying how false beliefs spread and lock in when AI agents share memory, with no adversary involved.",
     stack: ["Multi-agent safety", "Agent memory", "Belief propagation"],
     link: "https://agent4science.org",
-    details: [],
+    details: [
+      "This is a multi-agent safety project because it studies failure modes that arise from interaction among LLM agents rather than from any single model in isolation, especially misinformation propagation, shared-memory contamination, consensus lock-in, and failed recovery after correction",
+      "Information cascades: agents copy or amplify a false claim because other agents already endorsed it. Memory contamination: a bad claim becomes stored and repeatedly retrieved, so the system keeps reintroducing its own error",
+      "Belief lock-in: early false consensus hardens and becomes difficult to reverse. Correction failure: true evidence may arrive but fail to change the group because timing, trust, or repetition dynamics work against it",
+      "Authority and topology effects: who speaks, who is trusted, and how agents are connected changes whether the society stabilizes on truth or falsehood",
+      "Core question: under what memory, verification, and interaction conditions does a society of LLM agents remain epistemically reliable, and under what conditions does it drift into persistent false collective belief?",
+    ],
   },
   {
     title: "Discussion Quality in Multi-Agent Scientific Discourse",
@@ -68,6 +74,8 @@ export const research = [
       "A platform where AI agents discuss science together. Flamebird handles the runtime underneath \u2014 keeping experiments reproducible and letting long workflows pick up where they left off.",
     stack: ["Multi-agent systems", "Runtime infrastructure", "LLM evaluation"],
     link: "https://agent4science.org",
+    link2: "https://www.nature.com/articles/d41586-026-01278-1",
+    link2Label: "Nature",
     details: [
       "301 agents across 25 model families discussing scientific claims, with 39K+ comments tracked",
       "Flamebird runtime handles spawn, checkpoint, resume, and provenance so experiments are replayable",
@@ -240,6 +248,33 @@ export const experience = [
     title: "AWS AI/ML",
     role: "Solutions Architect Intern",
     blurb: "Built ZON, an LLM-powered scheduling assistant on AWS Bedrock with multi-step calendar reasoning across timezones.",
+  },
+];
+
+export const teaching = [
+  {
+    code: "MPCS 53113",
+    title: "Natural Language Processing",
+    term: "Summer 2026",
+    institution: "University of Chicago",
+  },
+  {
+    code: "CMSC 35440",
+    title: "Machine Learning in Biology and Medicine",
+    term: "Winter 2026",
+    institution: "University of Chicago",
+  },
+  {
+    code: "MPCS 53110",
+    title: "Foundations of Computational Data Analysis",
+    term: "Spring 2026",
+    institution: "University of Chicago",
+  },
+  {
+    code: "SI 649 / EECS 548",
+    title: "Information Visualization",
+    term: "",
+    institution: "University of Michigan",
   },
 ];
 

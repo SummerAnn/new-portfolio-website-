@@ -1,4 +1,4 @@
-import { notes, research, startups, apps, experience } from "./content.js";
+import { notes, research, startups, apps, experience, teaching } from "./content.js";
 import { prefersReducedMotion, setupMotionPreferences } from "./ui-motion.js";
 
 setupMotionPreferences();
@@ -123,6 +123,7 @@ if (researchGrid) {
               ${entry.stack.map((item) => `<span class="tag">${item}</span>`).join("")}
             </div>
             ${entry.link ? `<a class="research-entry__link" href="${entry.link}" target="_blank" rel="noopener noreferrer">View &#8594;</a>` : ""}
+            ${entry.link2 ? `<a class="research-entry__link" href="${entry.link2}" target="_blank" rel="noopener noreferrer">${entry.link2Label || "Link"} &#8594;</a>` : ""}
             <button class="research-entry__toggle" data-details="details-${index}">+ Details</button>
             <ul class="research-entry__details" id="details-${index}">
               ${entry.details.map((item) => `<li>${item}</li>`).join("")}
@@ -291,6 +292,21 @@ if (experienceRow) {
           <span class="experience-item__title">${entry.title}</span>
           <span class="experience-item__role">${entry.role}</span>
           <span class="experience-item__desc">${entry.blurb}</span>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+const teachingRow = document.querySelector("#teachingRow");
+if (teachingRow) {
+  teachingRow.innerHTML = teaching
+    .map(
+      (entry) => `
+        <div class="experience-item">
+          <span class="experience-item__title">${entry.code}</span>
+          <span class="experience-item__role">${entry.title}</span>
+          <span class="experience-item__desc">${entry.term ? entry.term + " \u2014 " : ""}${entry.institution}</span>
         </div>
       `,
     )
