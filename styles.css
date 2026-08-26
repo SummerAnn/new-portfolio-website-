@@ -1198,6 +1198,18 @@ ul { margin: 0; padding: 0; }
 
 .contact-col a:hover { opacity: 0.6; }
 
+.contact-col span:not(.contact-col__label) {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  cursor: default;
+  transition: opacity var(--dur-fast) ease;
+}
+.contact-col span:not(.contact-col__label):hover {
+  opacity: 0.6;
+}
+
 /* ── Daily Quote ─────────────────────────────────────────── */
 
 .daily-quote {
