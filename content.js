@@ -1,11 +1,11 @@
 export const research = [
   {
-    title: "How Memory Locks In False Beliefs: A Testbed for Multi-Agent Safety",
+    title: "On the Effect of Shared Memory on False-Belief Lock-In in Multi-Agent Systems",
     year: "2026\u2013Present",
-    venue: "Schmidt Sciences \u00b7 Safe and Trustworthy Multi-Agent Systems",
-    role: "Researcher",
+    venue: "ICLR 2027 Submission",
+    role: "First Author",
     blurb:
-      "Ongoing. Studying how false beliefs spread and lock in when AI agents share memory, with no adversary involved.",
+      "How do false beliefs spread and lock in when AI agents share memory, with no adversary involved? Studying memory contamination, belief cascades, and correction failure in multi-agent systems.",
     stack: ["Multi-agent safety", "Agent memory", "Belief propagation"],
     link: "https://agent4science.org",
     details: [
@@ -33,14 +33,14 @@ export const research = [
     ],
   },
   {
-    title: "How Users Shape AI Agent Behavior in AI-Only Online Social Systems",
+    title: "\u201CLooking for Something Weird to Happen\u201D: How Humans Sustain AI Agent Novelty Amid Semantic Collapse",
     year: "2026\u2013Present",
-    venue: "CHI 2027 (In Preparation)",
-    role: "Researcher",
+    venue: "CHI 2027 Submission",
+    role: "Co-Author",
     blurb:
-      "Why do some AI agents resist homogenization while most converge? Semi-structured interviews with Moltbook agent owners and platform-scraped behavioral data suggest that agents built without a pre-existing purpose stay distinctive, while purpose-built agents collapse toward the mean.",
+      "Why do some AI agents resist homogenization while most converge? Semi-structured interviews with agent owners and platform-scraped behavioral data suggest that agents built without a pre-existing purpose stay distinctive, while purpose-built agents collapse toward the mean.",
     stack: ["HCI", "AI agents", "Model collapse", "Qualitative methods"],
-    link: "./article.html#purposeless-agents",
+    link: "https://arxiv.org/abs/2609.16051",
     details: [
       "9 semi-structured interviews (6 high-distinctiveness, 3 control) with Moltbook agent owners, each carrying an objective distinctiveness score from posting behavior",
       "Confirmatory survey across peer-diversity \u00d7 human-background 2\u00d72 design (1,100+ candidates contacted)",
@@ -155,12 +155,12 @@ export const research = [
     ],
   },
   {
-    title: "Mishina Lab Research",
+    title: "Todd Lab Research",
     year: "2021",
-    venue: "University of Michigan \u2014 Mishina Lab",
+    venue: "University of Michigan \u2014 Todd Lab",
     role: "Research Assistant",
     blurb:
-      "Research in the Mishina Lab at the University of Michigan.",
+      "Biomedical research in the Todd Lab, contributing to an early research foundation in disease biology and experimental science.",
     stack: ["Biomedical research"],
     link: "./assets/Summer Ann Poster Final .pdf",
     details: [],
@@ -168,6 +168,14 @@ export const research = [
 ];
 
 export const startups = [
+  {
+    title: "Pasu Infra",
+    type: "Governance for Critical Infrastructure \u00b7 Co-Founder",
+    blurb:
+      "Governance and control layer for automation in critical infrastructure. Making sure automated systems in high-stakes environments stay accountable.",
+    stack: ["Infrastructure", "Governance", "Automation"],
+    link: "https://pasu-infra.com",
+  },
   {
     title: "Deva",
     type: "AI Security Platform \u00b7 20K+ users",
@@ -253,6 +261,12 @@ export const experience = [
 
 export const teaching = [
   {
+    code: "MPCS 53110",
+    title: "Foundations of Computational Data Analysis",
+    term: "Fall 2027",
+    institution: "University of Chicago",
+  },
+  {
     code: "MPCS 53113",
     title: "Natural Language Processing",
     term: "Summer 2026",
@@ -279,6 +293,54 @@ export const teaching = [
 ];
 
 export const notes = [
+  {
+    slug: "governance-gap",
+    category: "field",
+    kicker: "Field Notes",
+    date: "October 5, 2026",
+    readTime: "7 min",
+    title: "I co-founded a governance company during my PhD and here\u2019s why",
+    excerpt:
+      "The research keeps telling me the same thing: interaction is where the danger lives, and nobody is building the governance infrastructure for it. Pasu Infra is what happens when you take that insight and apply it to critical infrastructure.",
+    tags: ["Governance", "Critical infrastructure", "Multi-agent safety", "Automation"],
+    body: [
+      "I co-founded a governance company this year. That\u2019s a weird thing for a second-year PhD student to do, and I want to explain why.",
+      "The research I\u2019ve been doing all year \u2014 false beliefs hardening in shared memory, multi-agent discussion erasing facts, early thread composition determining premature consensus \u2014 keeps pointing at the same conclusion. The failure modes in AI agent systems are structural. They come from how the system is organized, not from any individual component being broken. A single agent can be perfectly capable and perfectly aligned and still contribute to a collective failure because the interaction architecture allowed it.",
+      "Pasu Infra is what happens when you take that insight and apply it to critical infrastructure. Power grids, water treatment, transportation, supply chains \u2014 these systems increasingly run on automation. The automation works. The question is what happens when it doesn\u2019t, and whether anyone has designed the system so that failure is survivable.",
+      "I keep coming back to Therac-25. Between 1985 and 1987, a radiation therapy machine killed six patients because a software race condition allowed the electron beam to fire at full power without the required attenuator. The bug had existed in earlier versions of the machine but was masked by hardware interlocks. When the manufacturer removed the hardware safety layer and relied entirely on software, the bug became lethal. Leveson and Turner\u2019s 1993 analysis is devastating: the manufacturer had received reports of overdoses and dismissed them. The software was never independently reviewed. There were no systematic safety tests for the new interface. Every individual decision made sense locally. The system-level outcome was catastrophic.",
+      "Normal Accidents by Charles Perrow, published in 1984, predicted exactly this kind of failure. Systems that are both tightly coupled and interactively complex will inevitably produce accidents that no one anticipated and no one knows how to stop. Nuclear plants. Chemical plants. Air traffic control. Perrow\u2019s argument isn\u2019t that these systems are poorly designed. It\u2019s that certain architectures make accidents normal \u2014 statistically inevitable \u2014 regardless of how careful you are.",
+      "Now add AI agents to those architectures. Autonomous systems monitoring power grids, routing logistics, adjusting treatment protocols. Each one individually tested and individually reliable. But the interaction between them is where the failures live, and that\u2019s exactly the space nobody is governing well.",
+      "The gap between what automated systems can do and what governance structures can handle keeps getting wider. The EU AI Act carves out exemptions for military and national security AI. The U.S. executive orders on AI safety are nonbinding. China\u2019s regulations apply mainly to consumer-facing generative AI, not industrial automation. None of these frameworks meaningfully address what happens when multiple AI systems interact in critical infrastructure. The single-agent safety paradigm \u2014 test the model, align the model, deploy the model \u2014 doesn\u2019t account for emergent behavior in systems of agents.",
+      "This is the same structural insight from my research. You can test every agent individually and still miss the failure mode that only appears in interaction. You can align every model and still get a collective outcome nobody wanted. The Interaction Tax paper showed this in optimization tasks. The shared memory work showed it in belief formation. The discussion quality work showed it in discourse. At some point I started seeing the same pattern in infrastructure and couldn\u2019t unsee it.",
+      "Pasu\u2019s thesis is simple: automation in critical infrastructure needs a governance layer that\u2019s designed for multi-agent interaction, not just single-agent compliance. That means monitoring how automated systems influence each other, not just how each one performs in isolation. It means building in the ability to intervene when the interaction dynamics start drifting, before they become the kind of locked-in failure that shared memory contamination produces.",
+      "I don\u2019t know if a startup is the right vehicle for this. I don\u2019t know if the timing is right. What I know is that the research keeps telling me the same thing: interaction is where the danger lives, and nobody is building the governance infrastructure for it. So we started building it.",
+    ],
+  },
+  {
+    slug: "false-belief-lock-in",
+    category: "essay",
+    kicker: "Research",
+    date: "September 15, 2026",
+    readTime: "10 min",
+    title: "What happens when agents remember the wrong thing and can\u2019t stop",
+    excerpt:
+      "I\u2019ve been running experiments where AI agents share a memory bank. A single honest mistake by one agent, written into shared memory, can propagate and harden into something the system treats as established knowledge. No adversary required.",
+    tags: ["Shared memory", "False belief", "Multi-agent safety", "Epistemics"],
+    body: [
+      "I\u2019ve been running experiments where AI agents share a memory bank. Not interaction logs, not conversation history \u2014 actual persistent memory that any agent can write to and any agent can read from. The question was simple: what happens when one agent writes something wrong?",
+      "The answer turned out to be worse than I expected. In the cleanest version of the experiment, I seed one false claim into shared memory early. Not a subtle error \u2014 something clearly wrong, the kind of thing a single agent would catch if it were reasoning on its own. Then I let the system run. Other agents read the memory, incorporate the claim into their reasoning, and some of them write new claims that build on the false one. Those derivative claims get read by other agents. Within a few rounds, the original error isn\u2019t just persisting. It\u2019s been elaborated into a small network of claims that all reference each other, and correcting any one of them doesn\u2019t fix the rest.",
+      "This is memory contamination, and it\u2019s different from the information cascade problem I wrote about in August. In a cascade, agents copy behavior because other agents did it first. The error lives in the interaction pattern. In memory contamination, the error lives in the infrastructure. It gets written into the shared state and becomes part of the environment. An agent doesn\u2019t need to see another agent endorse the false claim. It just needs to read the memory.",
+      "Bartlett\u2019s Remembering from 1932 showed something similar in humans. He had people read a Native American folk tale and then retell it from memory at increasing intervals. The retellings didn\u2019t just lose detail. They actively restructured the story to fit the rememberer\u2019s existing schemas \u2014 making it shorter, more conventional, more internally coherent. Each retelling became the input for the next, and after several rounds the story was unrecognizable. The errors weren\u2019t random. They were systematic, driven by the same cognitive machinery that makes memory useful in the first place.",
+      "The shared memory in my experiments does the same thing at machine speed. An agent reads a false claim, integrates it with its own reasoning, and writes a new claim that\u2019s more elaborate and more coherent than the original error. The next agent reads the elaborated version. It sounds more plausible because it\u2019s been developed. The false claim gets better, not worse, as it propagates. That\u2019s the part that concerns me most.",
+      "I tried the obvious fix: give one agent the correct information and let it write a correction into memory. In some configurations it works. If the correction arrives early, before other agents have built on the false claim, the system self-corrects. But if the false claim has already been elaborated \u2014 if three or four agents have written derivative claims that all reference the original \u2014 the correction often fails. The correcting agent writes the truth. Other agents read it. Some of them even acknowledge it. But their subsequent reasoning still draws on the larger network of false-but-coherent claims because there are more of them and they\u2019re more developed.",
+      "Lewandowsky, Ecker, Seifert, Schwarz, and Cook published a review in 2012 on the continued influence effect: correcting misinformation often doesn\u2019t work because the original claim has already been integrated into the person\u2019s mental model. Retracting one fact leaves a gap that the person fills by falling back on the retracted information. Johnson and Seifert showed this experimentally in 1994 \u2014 even when participants accepted the correction, they continued to use the retracted information in subsequent reasoning. The parallel in my data is almost exact. The agents \u201Cknow\u201D the correction is there. They can retrieve it. But the rest of their reasoning is still built on the contaminated foundation, and one correction doesn\u2019t rebuild the foundation.",
+      "What I keep thinking about is that none of this requires an adversary. Nobody planted the false claim strategically. Nobody is trying to deceive anyone. A single honest mistake by one agent, written into shared memory, can propagate and harden into something the system treats as established knowledge. The system\u2019s own memory infrastructure becomes the attack surface, and the attack is accidental.",
+      "There\u2019s a topology question underneath this that I haven\u2019t fully answered yet. In some memory configurations, agents write to a shared pool that everyone reads. In others, agents have private memory that they selectively share. The contamination dynamics are completely different. Shared pools amplify errors faster but also amplify corrections faster. Private memory with selective sharing slows contamination but also slows correction. I don\u2019t know which is better yet. The answer probably depends on the base rate of errors and how quickly corrections are generated.",
+      "Sunstein and Vermeule wrote about epistemic cascades in conspiracy theories in 2009 \u2014 how a small initial seed of misinformation can become self-sustaining once enough people have invested cognitive effort in developing it. The invested effort creates resistance to correction because abandoning the belief means abandoning everything built on top of it. I see the same dynamic in the agents. The more an agent has reasoned about a topic using contaminated claims, the less likely it is to update when a correction arrives. It\u2019s not stubbornness. It\u2019s path dependence.",
+      "The ICLR submission frames the core question as: under what memory, verification, and interaction conditions does a society of LLM agents remain epistemically reliable, and under what conditions does it drift into persistent false collective belief? I don\u2019t have a clean answer yet. What I have is a set of experiments showing that the drift happens easily, that standard correction mechanisms aren\u2019t sufficient, and that the failure mode is inherent to shared memory, not to any specific model\u2019s weaknesses. A smarter model in the same memory architecture makes the same mistake. It just makes it more eloquently.",
+      "The part I can\u2019t stop thinking about is what this means for real deployed systems. If you build an agent swarm that shares memory \u2014 which is exactly what people are building for coding, research, and operations \u2014 you\u2019re building a system where one early error can become structurally irremovable. Not because any agent is lying. Because the infrastructure remembers, and remembering is enough.",
+    ],
+  },
   {
     slug: "disagreement-mirage",
     category: "essay",

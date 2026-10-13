@@ -24,7 +24,7 @@ const sortRow = document.querySelector("#sortRow");
 const footerYear = document.querySelector("#footerYear");
 
 const renderEntry = (note) => `
-  <a class="journal-entry" href="./article.html#${note.slug}" data-category="${note.category}">
+  <a class="journal-entry" href="./article.html#${note.slug}" data-category="${note.category}" data-tags="${(note.tags || []).join(",").toLowerCase()}">
     <div class="journal-entry__meta">
       <span>${note.kicker}</span>
       <span>${note.date}</span>
@@ -32,6 +32,7 @@ const renderEntry = (note) => `
     </div>
     <h2 class="journal-entry__title">${note.title}</h2>
     <p class="journal-entry__excerpt">${note.excerpt}</p>
+    ${note.tags && note.tags.length ? `<div class="journal-entry__tags">${note.tags.map((t) => `<span class="journal-tag" data-tag="${t.toLowerCase()}">${t}</span>`).join("")}</div>` : ""}
   </a>
 `;
 
@@ -74,21 +75,55 @@ function sortNotes(list, mode) {
 
 let currentSort = "recent";
 let currentFilter = "all";
+let currentSearch = "";
+let currentTag = "";
+
+const searchInput = document.querySelector("#journalSearch");
 
 function renderList() {
   if (!journalList) return;
   const sorted = sortNotes(notes, currentSort);
   journalList.innerHTML = sorted.map(renderEntry).join("");
   applyFilter();
+  bindTagClicks();
 }
 
 function applyFilter() {
   if (!journalList) return;
+  const q = currentSearch.toLowerCase();
   journalList.querySelectorAll(".journal-entry").forEach((entry) => {
-    const matches =
+    const categoryMatch =
       currentFilter === "all" ||
       entry.getAttribute("data-category") === currentFilter;
-    entry.classList.toggle("is-hidden", !matches);
+    const searchMatch =
+      !q ||
+      entry.textContent.toLowerCase().includes(q) ||
+      (entry.getAttribute("data-tags") || "").includes(q);
+    const tagMatch =
+      !currentTag ||
+      (entry.getAttribute("data-tags") || "").split(",").some((t) => t.trim() === currentTag);
+    entry.classList.toggle("is-hidden", !(categoryMatch && searchMatch && tagMatch));
+  });
+}
+
+function bindTagClicks() {
+  if (!journalList) return;
+  journalList.querySelectorAll(".journal-tag").forEach((tag) => {
+    tag.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const clicked = tag.dataset.tag;
+      if (currentTag === clicked) {
+        currentTag = "";
+        journalList.querySelectorAll(".journal-tag").forEach((t) => t.classList.remove("is-active"));
+      } else {
+        currentTag = clicked;
+        journalList.querySelectorAll(".journal-tag").forEach((t) =>
+          t.classList.toggle("is-active", t.dataset.tag === clicked)
+        );
+      }
+      applyFilter();
+    });
   });
 }
 
@@ -96,6 +131,15 @@ renderList();
 
 if (footerYear) {
   footerYear.textContent = String(new Date().getFullYear());
+}
+
+/* ── Search ───────────────────────────────────────────── */
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    currentSearch = searchInput.value;
+    applyFilter();
+  });
 }
 
 /* ── Filter ───────────────────────────────────────────── */
@@ -108,6 +152,8 @@ if (filterRow && journalList) {
     if (!filter) return;
 
     currentFilter = filter;
+    currentTag = "";
+    journalList.querySelectorAll(".journal-tag").forEach((t) => t.classList.remove("is-active"));
 
     filterRow.querySelectorAll(".filter-chip").forEach((chip) => {
       chip.classList.toggle("is-active", chip === button);
