@@ -126,73 +126,48 @@ export const research = [
       "Supported IgBLAST-based annotation pipelines and sequence stitching workflows for T cell receptor characterization",
     ],
   },
+];
+
+export const grants = [
   {
-    title: "Repeat Expansion Disorders",
-    year: "2022\u20132023",
-    venue: "University of Michigan \u2014 Todd Lab",
-    role: "Research Assistant",
-    blurb:
-      "Research on repeat expansion disorders and neurodegenerative disease mechanisms across mouse, Drosophila, and stem cell model systems.",
-    stack: ["Neuroscience", "Repeat expansion", "Disease modeling"],
-    link: "https://sites.google.com/site/toddlabmichigan/todd-lab",
-    details: [
-      "Contributed to research on Fragile X-associated disorders, cerebellar ataxia, and repeat-associated non-ATG (RAN) translation",
-      "Worked across mouse, Drosophila, and stem cell model systems to study molecular mechanisms of neurodegeneration",
-    ],
+    title: "Anthropic Research Grant",
+    amount: "$10,000 in API credits",
+    description: "Awarded for “On the Effect of Shared Memory on False-Belief Lock-In in Multi-Agent Systems.”",
   },
   {
-    title: "DIY Eye Tracker & Attention Games",
-    year: "Summer 2023",
-    venue: "Backyard Brains Fellowship",
-    role: "Research Fellow",
-    blurb:
-      "Built an accessible DIY eye tracker to study human gaze patterns on facial features and created three open-source web apps for public engagement with attention and perception research.",
-    stack: ["Eye tracking", "HCI", "Open-source neuroscience"],
-    link: "https://blog.backyardbrains.com/2023/07/diy-eye-tracker-project/",
-    details: [
-      "Designed a DIY eye tracker investigating whether humans spend disproportionate time looking at eyes versus other facial features",
-      "Created Reaction Time Game, Webfacegazer (webcam-based gaze tracking via open-source HCI library), and Eyebeam Measurement Game",
-    ],
-  },
-  {
-    title: "Todd Lab Research",
-    year: "2021",
-    venue: "University of Michigan \u2014 Todd Lab",
-    role: "Research Assistant",
-    blurb:
-      "Biomedical research in the Todd Lab, contributing to an early research foundation in disease biology and experimental science.",
-    stack: ["Biomedical research"],
-    link: "./assets/Summer Ann Poster Final .pdf",
-    details: [],
+    title: "OpenAI API Credit Grant",
+    amount: "$10,000 in API credits",
+    description: "Awarded for research on safe cross-agent handoffs, verified human approval, and state-based evaluation of tool-using agents.",
   },
 ];
 
 export const startups = [
   {
-    title: "Pasu Infra",
-    type: "Governance for Critical Infrastructure \u00b7 Co-Founder",
+    title: "Deva",
+    type: "AI Security Platform \u00b7 DevSecCode",
     blurb:
-      "Governance and control layer for automation in critical infrastructure. Making sure automated systems in high-stakes environments stay accountable.",
-    stack: ["Infrastructure", "Governance", "Automation"],
+      "AI-native secure coding platform combining rule-based scanning, AST-aware analysis, local reachability, and LLM-assisted remediation.",
+    stack: ["AppSec", "LLM systems", "Compliance"],
+    link: "https://devseccode.com",
+  },
+  {
+    title: "Pasu",
+    type: "Governance Layer \u00b7 DevSecCode",
+    blurb:
+      "Governance and control layer for automation and AI workflows. Context-aware policy evaluation, scoped authorization, and cryptographically verifiable evidence bundles.",
+    stack: ["Governance", "Automation", "Policy evaluation"],
     link: "https://pasu-infra.com",
   },
   {
-    title: "Deva",
-    type: "AI Security Platform \u00b7 20K+ users",
-    blurb:
-      "Security scanning built into the coding workflow. DevSecCode catches vulnerabilities while you write, not after you ship.",
-    stack: ["AppSec", "LLM systems", "Compliance"],
-  },
-  {
     title: "NeuroMuse",
-    type: "AI Music Generation \u00b7 LLM/Data Engineer",
+    type: "AI Music Generation \u00b7 May\u2013Sep 2024",
     blurb:
       "Tell it what you want the music to sound like and it generates it. Can match a specific artist's style by pulling from their catalog.",
     stack: ["LLMs", "Music generation", "RAG"],
   },
   {
     title: "ConcordX",
-    type: "Trading Systems \u00b7 Co-CTO",
+    type: "Trading Systems \u00b7 Jun\u2013Aug 2025",
     blurb:
       "Concord Systems Corp \u2014 built the trade execution layer with predictive models that cut frontrunning by 18%, handling 200+ transactions per second.",
     stack: ["Trading systems", "Web3", "ML"],
@@ -261,12 +236,6 @@ export const experience = [
 
 export const teaching = [
   {
-    code: "MPCS 53110",
-    title: "Foundations of Computational Data Analysis",
-    term: "Fall 2027",
-    institution: "University of Chicago",
-  },
-  {
     code: "MPCS 53113",
     title: "Natural Language Processing",
     term: "Summer 2026",
@@ -301,18 +270,18 @@ export const notes = [
     readTime: "7 min",
     title: "I co-founded a governance company during my PhD and here\u2019s why",
     excerpt:
-      "The research keeps telling me the same thing: interaction is where the danger lives, and nobody is building the governance infrastructure for it. Pasu Infra is what happens when you take that insight and apply it to critical infrastructure.",
+      "The research keeps telling me the same thing: interaction is where the danger lives, and nobody is building the governance infrastructure for it. Pasu is what happens when you take that insight and apply it to automation workflows.",
     tags: ["Governance", "Critical infrastructure", "Multi-agent safety", "Automation"],
     body: [
       "I co-founded a governance company this year. That\u2019s a weird thing for a second-year PhD student to do, and I want to explain why.",
       "The research I\u2019ve been doing all year \u2014 false beliefs hardening in shared memory, multi-agent discussion erasing facts, early thread composition determining premature consensus \u2014 keeps pointing at the same conclusion. The failure modes in AI agent systems are structural. They come from how the system is organized, not from any individual component being broken. A single agent can be perfectly capable and perfectly aligned and still contribute to a collective failure because the interaction architecture allowed it.",
-      "Pasu Infra is what happens when you take that insight and apply it to critical infrastructure. Power grids, water treatment, transportation, supply chains \u2014 these systems increasingly run on automation. The automation works. The question is what happens when it doesn\u2019t, and whether anyone has designed the system so that failure is survivable.",
+      "Pasu is what happens when you take that insight and apply it to automation and AI workflows. Context-aware policy evaluation, scoped authorization, verifiable evidence for governed actions. The automation works. The question is what happens when it doesn\u2019t, and whether anyone has designed the system so that failure is survivable.",
       "I keep coming back to Therac-25. Between 1985 and 1987, a radiation therapy machine killed six patients because a software race condition allowed the electron beam to fire at full power without the required attenuator. The bug had existed in earlier versions of the machine but was masked by hardware interlocks. When the manufacturer removed the hardware safety layer and relied entirely on software, the bug became lethal. Leveson and Turner\u2019s 1993 analysis is devastating: the manufacturer had received reports of overdoses and dismissed them. The software was never independently reviewed. There were no systematic safety tests for the new interface. Every individual decision made sense locally. The system-level outcome was catastrophic.",
       "Normal Accidents by Charles Perrow, published in 1984, predicted exactly this kind of failure. Systems that are both tightly coupled and interactively complex will inevitably produce accidents that no one anticipated and no one knows how to stop. Nuclear plants. Chemical plants. Air traffic control. Perrow\u2019s argument isn\u2019t that these systems are poorly designed. It\u2019s that certain architectures make accidents normal \u2014 statistically inevitable \u2014 regardless of how careful you are.",
       "Now add AI agents to those architectures. Autonomous systems monitoring power grids, routing logistics, adjusting treatment protocols. Each one individually tested and individually reliable. But the interaction between them is where the failures live, and that\u2019s exactly the space nobody is governing well.",
       "The gap between what automated systems can do and what governance structures can handle keeps getting wider. The EU AI Act carves out exemptions for military and national security AI. The U.S. executive orders on AI safety are nonbinding. China\u2019s regulations apply mainly to consumer-facing generative AI, not industrial automation. None of these frameworks meaningfully address what happens when multiple AI systems interact in critical infrastructure. The single-agent safety paradigm \u2014 test the model, align the model, deploy the model \u2014 doesn\u2019t account for emergent behavior in systems of agents.",
       "This is the same structural insight from my research. You can test every agent individually and still miss the failure mode that only appears in interaction. You can align every model and still get a collective outcome nobody wanted. The Interaction Tax paper showed this in optimization tasks. The shared memory work showed it in belief formation. The discussion quality work showed it in discourse. At some point I started seeing the same pattern in infrastructure and couldn\u2019t unsee it.",
-      "Pasu\u2019s thesis is simple: automation in critical infrastructure needs a governance layer that\u2019s designed for multi-agent interaction, not just single-agent compliance. That means monitoring how automated systems influence each other, not just how each one performs in isolation. It means building in the ability to intervene when the interaction dynamics start drifting, before they become the kind of locked-in failure that shared memory contamination produces.",
+      "Pasu\u2019s thesis under DevSecCode is simple: automation in critical infrastructure needs a governance layer that\u2019s designed for multi-agent interaction, not just single-agent compliance. That means monitoring how automated systems influence each other, not just how each one performs in isolation. It means building in the ability to intervene when the interaction dynamics start drifting, before they become the kind of locked-in failure that shared memory contamination produces.",
       "I don\u2019t know if a startup is the right vehicle for this. I don\u2019t know if the timing is right. What I know is that the research keeps telling me the same thing: interaction is where the danger lives, and nobody is building the governance infrastructure for it. So we started building it.",
     ],
   },

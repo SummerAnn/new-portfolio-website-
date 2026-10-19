@@ -1,4 +1,4 @@
-import { notes, research, startups, apps, experience, teaching } from "./content.js";
+import { notes, research, startups, apps, experience, teaching, grants } from "./content.js";
 import { prefersReducedMotion, setupMotionPreferences } from "./ui-motion.js";
 
 setupMotionPreferences();
