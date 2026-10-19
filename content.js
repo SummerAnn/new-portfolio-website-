@@ -126,6 +126,45 @@ export const research = [
       "Supported IgBLAST-based annotation pipelines and sequence stitching workflows for T cell receptor characterization",
     ],
   },
+  {
+    title: "Repeat Expansion Disorders",
+    year: "2022–2023",
+    venue: "University of Michigan — Todd Lab",
+    role: "Research Assistant",
+    blurb:
+      "Research on repeat expansion disorders and neurodegenerative disease mechanisms across mouse, Drosophila, and stem cell model systems.",
+    stack: ["Neuroscience", "Repeat expansion", "Disease modeling"],
+    link: "https://sites.google.com/site/toddlabmichigan/todd-lab",
+    details: [
+      "Contributed to research on Fragile X-associated disorders, cerebellar ataxia, and repeat-associated non-ATG (RAN) translation",
+      "Worked across mouse, Drosophila, and stem cell model systems to study molecular mechanisms of neurodegeneration",
+    ],
+  },
+  {
+    title: "DIY Eye Tracker & Attention Games",
+    year: "Summer 2023",
+    venue: "Backyard Brains Fellowship",
+    role: "Research Fellow",
+    blurb:
+      "Built an accessible DIY eye tracker to study human gaze patterns on facial features and created three open-source web apps for public engagement with attention and perception research.",
+    stack: ["Eye tracking", "HCI", "Open-source neuroscience"],
+    link: "https://blog.backyardbrains.com/2023/07/diy-eye-tracker-project/",
+    details: [
+      "Designed a DIY eye tracker investigating whether humans spend disproportionate time looking at eyes versus other facial features",
+      "Created Reaction Time Game, Webfacegazer (webcam-based gaze tracking via open-source HCI library), and Eyebeam Measurement Game",
+    ],
+  },
+  {
+    title: "Todd Lab Research",
+    year: "2021",
+    venue: "University of Michigan — Todd Lab",
+    role: "Research Assistant",
+    blurb:
+      "Biomedical research in the Todd Lab, contributing to an early research foundation in disease biology and experimental science.",
+    stack: ["Biomedical research"],
+    link: "./assets/Summer Ann Poster Final .pdf",
+    details: [],
+  },
 ];
 
 export const grants = [
