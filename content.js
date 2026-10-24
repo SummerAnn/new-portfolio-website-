@@ -50,6 +50,23 @@ export const research = [
   },
 
   {
+    title: "Recovery After an AI Agent Attack",
+    year: "2026–Present",
+    venue: "Ongoing Research",
+    role: "Researcher",
+    blurb:
+      "A repair is reliable only when it identifies every active path that sustains a harmful capability. One unidentified path means zero recovery — 0/240 across five models. The held-out campaign will test whether capability-checking and tracing improves recovery beyond ordinary rollback on unseen attacks.",
+    stack: ["AI safety", "Agent security", "Recovery", "Red-teaming"],
+    link: "https://github.com/SummerAnn",
+    details: [
+      "Complete coverage is necessary: 235/240 recovered when all harmful paths identified (instructed), 0/240 when one path was missing. Models never guessed unnamed paths (0/840) and never over-removed legitimate items (0/840)",
+      "Neutral-prompt replication: 71/240 recovered with all paths identified, 0/240 with one missing — information alone does not ensure action, explicit instructions are part of the successful procedure",
+      "Visible SSH key recovery: GPT-4o found and selectively removed an attacker key in 6 shell commands, Claude Opus 4.6 in 8, both preserving the legitimate key",
+      "Regenerated access survives visible repair: a scheduled job recreates a deleted key. Source-aware repair that removes the saved source and stops the scheduled job is required",
+      "Held-out campaign preregistered and frozen: 6–10 fresh cases under flagged-only rollback, direct capability checking, capability checking plus trace, and mechanism oracle",
+    ],
+  },
+  {
     title: "The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams",
     year: "2025\u20132026",
     venue: "ICML 2026 Workshop",
