@@ -2680,3 +2680,61 @@ ul { margin: 0; padding: 0; }
   body { transition: none; }
   .ticker__inner { animation: none; }
 }
+
+.journal-figure {
+  max-width: 65ch;
+  margin: var(--sp-4) 0;
+  color: var(--fg);
+}
+
+.journal-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.journal-figure svg text {
+  fill: currentColor;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.journal-figure p {
+  margin: 0.5rem 0 0;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+}
+
+.journal-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.journal-log {
+  max-width: 65ch;
+  margin: var(--sp-4) 0;
+}
+
+.journal-log pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--fg-muted);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.journal-log pre b {
+  font-weight: 600;
+}
+
+.journal-log p {
+  margin: 0.5rem 0 0;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+}
