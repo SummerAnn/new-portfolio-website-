@@ -314,8 +314,9 @@ if (teachingRow) {
 }
 
 if (homeNotes) {
-  homeNotes.innerHTML = notes
-    .slice(-3).reverse()
+  homeNotes.innerHTML = [...notes]
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+    .slice(0, 3)
     .map(
       (note) => `
         <article class="note-preview" data-cursor="read">
