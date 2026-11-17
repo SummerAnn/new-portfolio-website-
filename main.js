@@ -124,6 +124,7 @@ if (researchGrid) {
             </div>
             ${entry.link ? `<a class="research-entry__link" href="${entry.link}" target="_blank" rel="noopener noreferrer">View &#8594;</a>` : ""}
             ${entry.link2 ? `<a class="research-entry__link" href="${entry.link2}" target="_blank" rel="noopener noreferrer">${entry.link2Label || "Link"} &#8594;</a>` : ""}
+            ${entry.link3 ? `<a class="research-entry__link" href="${entry.link3}" target="_blank" rel="noopener noreferrer">${entry.link3Label || "Link"} &#8594;</a>` : ""}
             <button class="research-entry__toggle" data-details="details-${index}">+ Details</button>
             <ul class="research-entry__details" id="details-${index}">
               ${entry.details.map((item) => `<li>${item}</li>`).join("")}

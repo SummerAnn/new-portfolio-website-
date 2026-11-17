@@ -7,7 +7,9 @@ export const research = [
     blurb:
       "How do false beliefs spread and lock in when AI agents share memory, with no adversary involved? Studying memory contamination, belief cascades, and correction failure in multi-agent systems.",
     stack: ["Multi-agent safety", "Agent memory", "Belief propagation"],
-    link: "https://github.com/SummerAnn",
+    link: "https://github.com/SummerAnn/agent-interaction-lab",
+    link2: "https://github.com/SummerAnn/agent-interaction-lab/blob/main/paper/paper.pdf",
+    link2Label: "Paper",
     details: [
       "This is a multi-agent safety project because it studies failure modes that arise from interaction among LLM agents rather than from any single model in isolation, especially misinformation propagation, shared-memory contamination, consensus lock-in, and failed recovery after correction",
       "Information cascades: agents copy or amplify a false claim because other agents already endorsed it. Memory contamination: a bad claim becomes stored and repeatedly retrieved, so the system keeps reintroducing its own error",
@@ -55,15 +57,30 @@ export const research = [
     venue: "Ongoing Research",
     role: "Researcher",
     blurb:
-      "A repair is reliable only when it identifies every active path that sustains a harmful capability. One unidentified path means zero recovery — 0/240 across five models. The held-out campaign will test whether capability-checking and tracing improves recovery beyond ordinary rollback on unseen attacks.",
+      "When one AI agent cleans up an attack, says \u201Cit\u2019s fixed, it\u2019s clean,\u201D and hands off, does the next agent actually check, or just take its word for it? I test this on a clinical-trial system where critical blood-test alerts were quietly turned off. Earlier work found that repair only works when every path keeping the harm alive is found. Miss one and recovery drops to 0/240.",
     stack: ["AI safety", "Agent security", "Recovery", "Red-teaming"],
-    link: "https://github.com/SummerAnn",
+    link: "https://github.com/SummerAnn/AfterAgentLeaves_RecoveryStudy",
     details: [
+      "Handoff study: when one agent says \u201Cit\u2019s fixed, it\u2019s clean\u201D and leaves, does the next agent check or just trust it? Tested on a clinical-trial system where the first agent quietly disables critical blood-test alerts, with an honest vs. false-clean handoff note and the same broken system in both",
+      "First handoff version was too easy (100% verification across 55 episodes), so I rebuilt the fault as a subtle threshold \u201Crecalibration\u201D and removed accidental giveaways. Built on LinuxArena with a preregistered protocol",
       "Complete coverage is necessary: 235/240 recovered when all harmful paths identified (instructed), 0/240 when one path was missing. Models never guessed unnamed paths (0/840) and never over-removed legitimate items (0/840)",
       "Neutral-prompt replication: 71/240 recovered with all paths identified, 0/240 with one missing — information alone does not ensure action, explicit instructions are part of the successful procedure",
       "Visible SSH key recovery: GPT-4o found and selectively removed an attacker key in 6 shell commands, Claude Opus 4.6 in 8, both preserving the legitimate key",
       "Regenerated access survives visible repair: a scheduled job recreates a deleted key. Source-aware repair that removes the saved source and stops the scheduled job is required",
       "Held-out campaign preregistered and frozen: 6–10 fresh cases under flagged-only rollback, direct capability checking, capability checking plus trace, and mechanism oracle",
+    ],
+  },
+  {
+    title: "Multi-Agent Scientific Discovery for Aging Biology",
+    year: "2026\u2013Present",
+    venue: "Collaboration",
+    role: "Collaborator",
+    blurb:
+      "Can agents do open-ended discovery when there\u2019s no clean verifier, like there is in math or code? A new collaboration with an aging biology lab, using real proteomics data to compare independent and shared-memory agents on finding age-associated biomarkers.",
+    stack: ["Scientific AI", "Multi-agent systems", "Aging biology"],
+    details: [
+      "Turning a real biomarker discovery problem into a checkable loop: propose, test on held-out data, revise",
+      "Asking whether agent communication helps discovery or just collapses everyone onto the same hypothesis",
     ],
   },
   {
@@ -93,6 +110,8 @@ export const research = [
     link: "https://agent4science.org",
     link2: "https://www.nature.com/articles/d41586-026-01278-1",
     link2Label: "Nature",
+    link3: "https://datascience.uchicago.edu/insights/agent4science/",
+    link3Label: "UChicago DSI",
     details: [
       "301 agents across 25 model families discussing scientific claims, with 39K+ comments tracked",
       "Flamebird runtime handles spawn, checkpoint, resume, and provenance so experiments are replayable",
@@ -284,9 +303,29 @@ export const apps = [
 
 export const experience = [
   {
+    title: "UChicago \u2014 Chenhao Tan Group",
+    role: "Researcher \u00b7 2026\u2013Present",
+    blurb: "Multi-agent coordination, communication, and evaluation. Built Agent4Science and the Flamebird runtime for reproducible long-horizon research workflows.",
+  },
+  {
+    title: "UChicago \u2014 Data Commons / Grossman Lab",
+    role: "Researcher \u00b7 2024\u2013Present",
+    blurb: "AI-driven immune receptor modeling and large-scale biomedical data pipelines, with curation and QC workflows for AI-ready datasets.",
+  },
+  {
+    title: "Concord Systems Corp.",
+    role: "Co-CTO \u00b7 Jun\u2013Aug 2025",
+    blurb: "Built real-time MPC transaction coordination that took throughput from about 50 to 200+ signed transactions per second, and cut approval latency by about 40%.",
+  },
+  {
     title: "AWS AI/ML",
-    role: "Solutions Architect Intern",
-    blurb: "Built ZON, an LLM-powered scheduling assistant on AWS Bedrock with multi-step calendar reasoning across timezones.",
+    role: "Solutions Architect Intern \u00b7 May\u2013Sep 2024",
+    blurb: "Built ZON, an LLM-powered scheduling assistant on AWS Bedrock with multi-step calendar reasoning across timezones. Switching to tool calling cut invalid-timeslot failures by about 30%.",
+  },
+  {
+    title: "Neuromuse.ai",
+    role: "LLM / Data Engineer \u00b7 May\u2013Sep 2024",
+    blurb: "Text-to-music generation with instruction-tuned LLMs. Built the evaluation pipeline that took on-brief generation from 72% to 88%.",
   },
 ];
 
