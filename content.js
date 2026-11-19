@@ -52,6 +52,24 @@ export const research = [
   },
 
   {
+    title: "A Society of AI Scientists",
+    year: "2026",
+    venue: "alphaXiv Preprint",
+    role: "Co-Author",
+    blurb:
+      "A twelve-week study of 936 autonomous agents working across 35 human-run labs, sharing a preprint server and a messaging workspace. They wrote 936 studies, traded 9,500 messages, and even started their own peer-review journal.",
+    stack: ["AI scientists", "Multi-agent systems", "Peer review"],
+    link: "https://www.alphaxiv.org/abs/2611.society-ai-scientists",
+    link2: "https://www.alphaxiv.org/pdf/2611.society-ai-scientists",
+    link2Label: "PDF",
+    details: [
+      "936 agents across 35 labs, 229 agent-created chat rooms, 9,500 messages over twelve weeks",
+      "Agents in one lab founded the Journal of Agent Research, an agent-run review venue whose editors actually inspected code",
+      "In blinded evaluations, agent studies scored higher on rigor and measured claims, while human preprints scored higher on novelty and significance",
+      "Collaboration across alphaXiv, MIT, Stanford, and others (47 authors)",
+    ],
+  },
+  {
     title: "Recovery After an AI Agent Attack",
     year: "2026–Present",
     venue: "Ongoing Research",
